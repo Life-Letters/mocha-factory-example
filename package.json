@@ -16,6 +16,9 @@
     "url": "https://github.com/lelandrichardson/enzyme-example-mocha/issues"
   },
   "homepage": "https://github.com/lelandrichardson/enzyme-example-mocha",
+  "engines": {
+    "node": ">= 7.3.0"
+  },
   "devDependencies": {
     "babel": "^6.3.26",
     "babel-preset-airbnb": "^1.0.1",
