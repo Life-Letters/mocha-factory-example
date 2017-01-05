@@ -4,7 +4,11 @@
   "description": "Example project with React + Enzyme + Mocha",
   "main": "build/index.js",
   "scripts": {
-    "test": "mocha test/.setup.js test/**/*-test.js"
+    "test": "mocha test/.setup.js test/**/*-test.js",
+    "watch": "webpack -d --watch",
+    "build": "webpack",
+    "serve": "serve ./public",
+    "start": "nodemon"
   },
   "repository": {
     "type": "git",
@@ -20,14 +24,17 @@
     "node": ">= 7.3.0"
   },
   "devDependencies": {
-    "babel": "^6.3.26",
+    "babel-core": "^6.21.0",
+    "babel-loader": "^6.2.10",
     "babel-preset-airbnb": "^1.0.1",
     "babel-register": "^6.4.3",
     "chai": "^3.5.0",
     "enzyme": "^2.0.0",
     "jsdom": "^8.0.1",
     "mocha": "^2.4.5",
-    "react-addons-test-utils": "^0.14.7"
+    "react-addons-test-utils": "^0.14.7",
+    "serve": "^1.4.0",
+    "webpack": "^1.13.1"
   },
   "dependencies": {
     "react": "^0.14.7",
