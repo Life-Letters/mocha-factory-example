@@ -10,7 +10,6 @@ describe("Testing Functions", function() {
     expect(F.addTwo(1)).to.equal(3);
   });
 
-
   it("Adding 2 to result of Adding 1 to 1 yields 4", function() {
     let one = 1;
     var result;
