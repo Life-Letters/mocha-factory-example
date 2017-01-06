@@ -42,7 +42,6 @@ var client2 = wdSync.remote()
     , browser2 = client2.browser
     , sync2 = client2.sync;
 
-
 // Second browser
 sync(function(){
     browser2.init( { browserName: 'chrome'} );

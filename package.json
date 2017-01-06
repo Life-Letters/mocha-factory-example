@@ -34,7 +34,7 @@
     "enzyme": "^2.0.0",
     "jsdom": "^8.0.1",
     "mocha": "^2.4.5",
-    "react-addons-test-utils": "^0.14.7",
+    "react-addons-test-utils": "^15.4.0",
     "selenium-html-js-converter": "^0.4.7",
     "selenium-webdriver": "^3.0.1",
     "serve": "^1.4.0",
@@ -42,7 +42,7 @@
     "webpack": "^1.13.1"
   },
   "dependencies": {
-    "react": "^0.14.7",
-    "react-dom": "^0.14.7"
+    "react": "^15.4.0",
+    "react-dom": "^15.4.0"
   }
 }
