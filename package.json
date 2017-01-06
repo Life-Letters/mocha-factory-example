@@ -4,7 +4,7 @@
   "description": "Example project with React + Enzyme + Mocha",
   "main": "build/index.js",
   "scripts": {
-    "test": "mocha test/.setup.js test/**/*-test.js",
+    "test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
     "watch": "webpack -d --watch",
     "build": "webpack",
     "serve": "serve ./public",
@@ -34,6 +34,7 @@
     "enzyme": "^2.0.0",
     "jsdom": "^8.0.1",
     "mocha": "^2.4.5",
+    "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.0",
     "selenium-html-js-converter": "^0.4.7",
     "selenium-webdriver": "^3.0.1",
