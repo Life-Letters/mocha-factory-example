@@ -6,6 +6,8 @@ Example projects how to test various things
 
 Testing react components using Enzyme/Mocha/Chai refer to /test/Components folder
 
+[Enzyme api docs](http://airbnb.io/enzyme/docs/api/index.html)
+
 ## Classes
 
 Testing JS es6 Classes using Mocha/Chai. Refer to /test/Classes
