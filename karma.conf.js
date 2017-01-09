@@ -1,6 +1,6 @@
 
 var path = require('path');
-var loaders = require('./loaders.js');
+var loaders = require('./webpack.loaders.js');
 
 module.exports = function(config) {
   config.set({
