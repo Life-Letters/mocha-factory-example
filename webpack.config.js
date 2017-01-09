@@ -1,5 +1,6 @@
 var webpack = require('webpack');
 var path = require('path');
+var loaders = require('./loaders.js');
 
 var BUILD_DIR = path.resolve(__dirname, 'public');
 var APP_DIR = path.resolve(__dirname, 'src');
@@ -10,14 +11,15 @@ var config = {
         path: BUILD_DIR,
         filename: 'bundle.js'
     },
+    devServer: {
+      contentBase: './public',
+      inline: true,
+      stats: {
+        chunks: false
+      }
+    },
     module : {
-        loaders : [
-            {
-                test : /\.jsx?/,
-                include : APP_DIR,
-                loader : 'babel-loader'
-            }
-        ]
+        loaders : loaders
     }
 };
 

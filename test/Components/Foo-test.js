@@ -3,7 +3,6 @@ import { expect } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 import Foo from '../../src/Foo';
 
-
 // Setup
 // Convenience method, especially useful when your component has alot of parameters
 const makeShallow = (r) => shallow(<Foo />);

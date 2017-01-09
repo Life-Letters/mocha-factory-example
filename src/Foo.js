@@ -1,4 +1,5 @@
 import React, { PropTypes , Component} from 'react';
+import styles from './styles.scss';
 
 const propTypes = {};
 
@@ -21,7 +22,7 @@ class Foo extends Component {
   render() {
     return (
       <div className="foo">
-        <h2>{this.state.title}</h2>
+        <h2 className={styles.blue}>{this.state.title}</h2>
         <button onClick={this.enterTheDragon.bind(this)}>Enter the Dragon</button>
       </div>
     );

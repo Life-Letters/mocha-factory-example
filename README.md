@@ -1,6 +1,13 @@
 # Example testing structure
 
-Example projects how to test various things
+Example projects how to test various things. We use Enzyme/Mocha/Chai/Karma/Jasmine/PhantomJs for this
+
+All unit tests are will run on these scripts:
+
+```
+  npm run test
+  npm run watch:test
+```
 
 ## React Components
 
@@ -47,12 +54,11 @@ If you still want to run js tests theres also an example
 
 ## Serving the test app
 
-There are a few commands
+This serves the actual react app
 
 ```
   npm run build
-  npm run watch
-  npm run serve
+  npm run serve (builds AND serve/watch)
 ```
 
 ## TODO
