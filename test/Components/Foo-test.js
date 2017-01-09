@@ -11,9 +11,6 @@ const makeShallow = (r) => shallow(<Foo />);
 // Test suite
 // Don't use es6 Arrow functions because it has some scoping confusion (with 'this')
 describe("A suite", function() {
-  it("Contains spec with an expectation", function() {
-    expect(makeShallow().contains(<div className="foo" />)).to.equal(true);
-  });
 
   it("Contains spec with an expectation", function() {
     expect(makeShallow().is('.foo')).to.equal(true);
@@ -25,6 +22,6 @@ describe("A suite", function() {
 
   xit("Ignored test", function(){
     // This is ignored
-    expect(false)to.equal(true);
+    expect(false).to.equal(true);
   })
 });
