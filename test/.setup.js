@@ -1,6 +1,12 @@
 require('babel-register')();
-
+var hook = require('css-modules-require-hook');
+var sass = require('node-sass');
 var jsdom = require('jsdom').jsdom;
+
+hook({
+  extensions: [ '.scss' ],
+  preprocessCss: data => sass.renderSync({ data }).css
+})
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
