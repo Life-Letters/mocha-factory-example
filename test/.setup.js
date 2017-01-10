@@ -2,11 +2,17 @@ require('babel-register')();
 var hook = require('css-modules-require-hook');
 var sass = require('node-sass');
 var jsdom = require('jsdom').jsdom;
+var path = require('path');
 
 hook({
-  extensions: [ '.scss' ],
-  preprocessCss: data => sass.renderSync({ data }).css
-})
+    generateScopedName: '[name]__[local]___[hash:base64:5]',
+    extensions: [ '.scss', '.css' ],
+    preprocessCss: (data, filename) =>
+      sass.renderSync({
+        data,
+        file: filename,
+      }).css,
+});
 
 var exposedProperties = ['window', 'navigator', 'document'];
 
