@@ -9,6 +9,12 @@ All unit tests are will run on these scripts:
   npm run watch:test
 ```
 
+If you fancy, install growl for notifications
+
+```
+https://github.com/tj/node-growl
+```
+
 ## React Components
 
 Testing react components using Enzyme/Mocha/Chai refer to /test/Components folder

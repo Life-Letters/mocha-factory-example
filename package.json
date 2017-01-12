@@ -7,16 +7,16 @@
     "build": "webpack",
     "test": "npm run test:unit",
     "start": "npm run build && node server",
-    "test:unit" : "mocha test/.setup.js test/**/*-test.js",
+    "test:unit": "mocha test/.setup.js test/**/*-test.js",
     "test:journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
     "test:journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
-    "watch:test": "mocha --watch test/.setup.js test/**/*-test.js",
+    "watch:test": "mocha --watch --growl test/.setup.js test/**/*-test.js",
     "watch:serve": "webpack-dev-server --watch",
     "postinstall": "npm run test"
   },
   "engineStrict": true,
-  "engines" : {
-    "node" : ">=7.3.0"
+  "engines": {
+    "node": ">=7.3.0"
   },
   "repository": {
     "type": "git",
@@ -41,6 +41,7 @@
     "dotenv": "^4.0.0",
     "enzyme": "^2.0.0",
     "file-loader": "0.9.0",
+    "growl": "^1.9.2",
     "jsdom": "^8.0.1",
     "json-loader": "0.5.4",
     "mocha": "^2.4.5",
