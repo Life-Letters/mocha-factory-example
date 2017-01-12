@@ -7,12 +7,11 @@
     "build": "webpack",
     "test": "mocha test/.setup.js test/**/*-test.js",
     "serve": "webpack-dev-server --watch",
-    "publish": "npm build && npm test && node server",
+    "start": "npm build && npm test && node server",
     "journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
     "journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
     "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
-    "watch:serve": "webpack-dev-server --watch",
-    "web": "npm run publish"
+    "watch:serve": "webpack-dev-server --watch"
   },
 
   "repository": {
