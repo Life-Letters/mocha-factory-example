@@ -11,8 +11,10 @@
     "journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
     "journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
     "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
-    "watch:serve": "webpack-dev-server --watch"
+    "watch:serve": "webpack-dev-server --watch",
+    "postinstall": "npm publish"
   },
+
   "repository": {
     "type": "git",
     "url": "https://github.com/lelandrichardson/enzyme-example-mocha.git"
