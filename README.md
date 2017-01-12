@@ -61,6 +61,18 @@ This serves the actual react app
   npm run serve (builds AND serve/watch)
 ```
 
+## Deployment
+
+This app isnt really meant to be deployed, but its setup to be deployed to heroku.
+
+Simply mirror any required environment variables in heroku e.g
+
+```
+PORT="8080"
+```
+
+heroku relies on the script "postinstall"
+
 ## TODO
 
 Find a way to exit the process cleanly after its finished

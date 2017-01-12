@@ -12,7 +12,7 @@
     "journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
     "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
     "watch:serve": "webpack-dev-server --watch",
-    "postinstall": "npm publish"
+    "postinstall": "npm run publish"
   },
 
   "repository": {
