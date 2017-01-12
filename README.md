@@ -71,7 +71,7 @@ Simply mirror any required environment variables in heroku e.g
 PORT="8080"
 ```
 
-heroku relies on the script "postinstall"
+heroku relies on the script "web"
 
 ## TODO
 
