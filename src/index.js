@@ -7,7 +7,7 @@ class App extends Component {
     // Render JSX
     return (
       <div>
-        <h1>Sample App</h1>
+        <h1>Sample App on Heroku</h1>
         <Foo/>
       </div>
     );
