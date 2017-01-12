@@ -4,12 +4,14 @@
   "description": "Example project with React + Enzyme + Mocha",
   "main": "build/index.js",
   "scripts": {
-    "test": "mocha --compilers test/.setup.js test/**/*-test.js",
     "build": "webpack",
+    "test": "mocha test/.setup.js test/**/*-test.js",
     "serve": "webpack-dev-server --watch",
-    "journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
+    "publish": "npm build && npm test && node server",
     "journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
-    "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'"
+    "journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
+    "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
+    "watch:serve": "webpack-dev-server --watch"
   },
   "repository": {
     "type": "git",
@@ -29,9 +31,12 @@
     "babel-loader": "^6.2.10",
     "babel-preset-airbnb": "^1.0.1",
     "babel-register": "^6.4.3",
+    "body-parser": "^1.15.2",
     "chai": "^3.5.0",
     "css-loader": "0.25.0",
     "css-modules-require-hook": "^4.0.5",
+    "dot-env": "0.0.1",
+    "dotenv": "^4.0.0",
     "enzyme": "^2.0.0",
     "file-loader": "0.9.0",
     "jsdom": "^8.0.1",
