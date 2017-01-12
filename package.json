@@ -10,7 +10,7 @@
     "test:unit" : "mocha test/.setup.js test/**/*-test.js",
     "test:journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
     "test:journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
-    "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
+    "watch:test": "mocha --watch test/.setup.js test/**/*-test.js",
     "watch:serve": "webpack-dev-server --watch",
     "postinstall": "npm run test"
   },
@@ -45,7 +45,6 @@
     "json-loader": "0.5.4",
     "mocha": "^2.4.5",
     "node-sass": "^3.10.0",
-    "nodemon": "^1.11.0",
     "postcss-loader": "1.1.0",
     "react-addons-test-utils": "^15.4.0",
     "resolve-url-loader": "1.6.0",
