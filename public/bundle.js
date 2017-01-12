@@ -86,7 +86,7 @@
 	          _react2['default'].createElement(
 	            'h1',
 	            null,
-	            'Sample App'
+	            'Sample App on Heroku'
 	          ),
 	          _react2['default'].createElement(_Foo2['default'], null)
 	        );
@@ -21589,10 +21589,6 @@
 	    key: 'render',
 	    value: function () {
 	      function render() {
-
-	        console.log(_styles2['default']);
-	        console.log('fuck');
-
 	        return _react2['default'].createElement(
 	          'div',
 	          { className: 'foo' },

@@ -5,8 +5,8 @@
   "main": "build/index.js",
   "scripts": {
     "build": "webpack",
-    "test": "test:unit",
-    "start": "npm build && node server",
+    "test": "npm run test:unit",
+    "start": "npm run build && node server",
     "test:unit" : "mocha test/.setup.js test/**/*-test.js",
     "test:journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
     "test:journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
