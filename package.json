@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/lelandrichardson/enzyme-example-mocha",
   "engines": {
-    "node": ">= 7.3.0"
+    "node": ">=7.3.0"
   },
   "devDependencies": {
     "babel-core": "^6.21.0",
