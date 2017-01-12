@@ -5,11 +5,11 @@
   "main": "build/index.js",
   "scripts": {
     "build": "webpack",
-    "test": "mocha test/.setup.js test/**/*-test.js",
-    "serve": "webpack-dev-server --watch",
-    "start": "npm build && npm test && node server",
-    "journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
-    "journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
+    "test": "test:unit",
+    "start": "npm build && node server",
+    "test:unit" : "mocha test/.setup.js test/**/*-test.js",
+    "test:journey": "selenium-standalone start | serve ./public -p 3999 | node ./test/.wd-sync.js",
+    "test:journey-js": "serve ./public -p 3999 | node ./test/.selenium.js",
     "watch:test": "nodemon -x 'mocha test/.setup.js test/**/*-test.js'",
     "watch:serve": "webpack-dev-server --watch"
   },
