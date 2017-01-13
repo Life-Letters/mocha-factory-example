@@ -2,32 +2,41 @@
 
 Example projects how to test various things. We use Enzyme/Mocha/Chai/Karma/Jasmine/PhantomJs for this
 
-All unit tests are will run on these scripts:
+As an overview theres 3 types of tests, They can be ran with the following commands:
 
 ```
-  npm run test
-  npm run watch:test
+  npm run test:unit
+  npm run test:journey
+  npm run test:journey-js
+
+  // With watch
+  npm run watch:test:unit
+  npm run watch:test:journey
+  npm run watch:test:journey-js
 ```
 
-If you fancy, install growl for notifications
+If you fancy OSX notifications install the notifier :
 
 ```
-https://github.com/tj/node-growl
+sudo gem install terminal-notifier
 ```
 
-## React Components
+Some environment variables are expected. Optional is marked with <OPTIONAL_...> else its required. For development make a '.env' file in root:
 
-Testing react components using Enzyme/Mocha/Chai refer to /test/Components folder
+```
+  ENV_TYPE="local"
+  SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>"
+```
+
+## Unit, Classes, React Components
+
+These tests are in the test/Unit folder. They are a mix of Class/Function/Component level tests.  
 
 [Enzyme api docs](http://airbnb.io/enzyme/docs/api/index.html)
 
-## Classes
-
-Testing JS es6 Classes using Mocha/Chai. Refer to /test/Classes
-
-## Unit (Generic/Integration)
-
-Testing JS generic js functions using Mocha/Chai. Refer to /test/Unit
+```
+npm run watch:test
+```
 
 ## Journey Testing
 
@@ -42,7 +51,7 @@ Install Selenium IDE for easier test generation [link](https://addons.mozilla.or
 Run script
 
 ```
-  npm run journey
+  npm run test:journey
 ```
 
 ##### Selenium Script formats
@@ -55,7 +64,7 @@ Therefore it is recommended you write the test in HTML and run it with Selenium-
 If you still want to run js tests theres also an example
 
 ```
- npm run journey-js
+npm run test:journey-js
 ```
 
 ## Serving the test app
@@ -69,16 +78,10 @@ This serves the actual react app
 
 ## Deployment
 
-This app isnt really meant to be deployed, but its setup to be deployed to heroku.
+The app confirms to heroku deployment stucture, with the root Procfile and 'postinstall' build script.
 
-Simply mirror any required environment variables in heroku e.g
-
-```
-PORT="8080"
-```
-
-heroku relies on the script "web"
+Simply mirror any environment variables in heroku and it should behave as expected.
 
 ## TODO
 
-Find a way to exit the process cleanly after its finished
+Find a way to exit the process cleanly after its finished journey

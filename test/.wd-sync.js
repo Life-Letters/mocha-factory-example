@@ -4,8 +4,8 @@ const wdSync = require('wd-sync');
 const fs = require('fs');
 
 // Your test files and export path
-const TEST_SCRIPTS_DIR = path.resolve(__dirname, 'Selenium/Tests');
-const EXPORT_DIR = path.resolve(__dirname, 'Selenium/Export')
+const TEST_SCRIPTS_DIR = path.resolve(__dirname, 'Journey/Tests');
+const EXPORT_DIR = path.resolve(__dirname, 'Journey/Export')
 
 // Convert your tests
 fs.readdir(TEST_SCRIPTS_DIR, (err, files) => {

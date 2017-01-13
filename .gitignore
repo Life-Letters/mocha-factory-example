@@ -34,3 +34,6 @@ node_modules
 
 # screenshots form tests
 screenshots
+
+#.env
+.env
