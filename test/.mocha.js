@@ -8,13 +8,15 @@ var Mocha = require('mocha'),
 // Instantiate a Mocha instance.
 var mocha = new Mocha();
 
+console.log(process.env);
+
 // Integrate with Slack if available
 if(process.env.SLACK_DEVELOPMENT_HOOK_URL){
   mocha.reporter('mocha-ci-slack-reporter',{
+    testTitle: `${process.env.npm_package_name}(${process.env.NODE_ENV}) - Unit tests`
     url: process.env.SLACK_DEVELOPMENT_HOOK_URL,
-    username: `${process.env.npm_package_name}(${process.env.ENV_TYPE})`,
-    channel: '#deployment',
-    logsUrl: 'https://ci.com/project/...'
+    username: `Heroku-Florey`,
+    channel: '#deployment'
   });
 }
 

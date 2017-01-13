@@ -24,7 +24,7 @@ sudo gem install terminal-notifier
 Some environment variables are expected. Optional is marked with <OPTIONAL_...> else its required. For development make a '.env' file in root:
 
 ```
-  ENV_TYPE="local"
+  NODE_ENV="local"
   SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>"
 ```
 
