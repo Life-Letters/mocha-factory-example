@@ -1,3 +1,18 @@
+var requireHacker = require('require-hacker');
+
+// Dont bother with Static files
+const ignoredExtensions = [
+  'png',
+  'gif',
+  'jpg',
+  'jpeg',
+  'svg'
+]
+
+for (var ext of ignoredExtensions){
+  requireHacker.hook(ext, () => 'module.exports = ""');
+}
+
 require('babel-register')();
 var hook = require('css-modules-require-hook');
 var sass = require('node-sass');

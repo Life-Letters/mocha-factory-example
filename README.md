@@ -30,7 +30,8 @@ Some environment variables are expected. Optional is marked with <OPTIONAL_...> 
 
 ## Unit, Classes, React Components
 
-These tests are in the test/Unit folder. They are a mix of Class/Function/Component level tests.  
+These tests are in the test/Unit folder. They are a mix of Class/Function/Component level tests.
+Please note you must import the scss files in your tests.
 
 [Enzyme api docs](http://airbnb.io/enzyme/docs/api/index.html)
 
@@ -85,3 +86,8 @@ Simply mirror any environment variables in heroku and it should behave as expect
 ## TODO
 
 Find a way to exit the process cleanly after its finished journey
+
+## Other supporting docs/examples
+
+Sample project (using karma is not recommended)
+https://github.com/alextaylor000/gif-grabbr
