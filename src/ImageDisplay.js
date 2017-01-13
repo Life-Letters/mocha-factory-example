@@ -1,4 +1,5 @@
 const React = require('react');
+const loadingImage = require('./loading.gif');
 
 const GIPHY_LOADING_URL = `https://giphy.com/gifs/loop-loading-loader-xTk9ZvMnbIiIew7IpW`;
 const styles = {
@@ -12,7 +13,7 @@ class ImageDisplay extends React.Component {
   }
 
   render () {
-    const url = this.props.loading ? 'loading.gif' : this.props.url;
+    const url = this.props.loading ? loadingImage : this.props.url;
     const width = this.props.width || 200;
     return (
       <div style={styles}>
