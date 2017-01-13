@@ -20,7 +20,7 @@ describe("Testing Component", function() {
     expect(makeShallow().find('.foo').length).to.equal(1);
   });
 
-  xit("Ignored test", function(){
+  it("Ignored test", function(){
     // This is ignored
     expect(false).to.equal(true);
   })
