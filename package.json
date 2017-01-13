@@ -34,6 +34,7 @@
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
     "babel-preset-airbnb": "^1.0.1",
+    "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.4.3",
     "body-parser": "^1.15.2",
     "chai": "^3.5.0",
@@ -64,6 +65,7 @@
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
   }
