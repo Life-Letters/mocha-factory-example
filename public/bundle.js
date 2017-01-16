@@ -83,11 +83,6 @@
 	        return _react2['default'].createElement(
 	          'div',
 	          null,
-	          _react2['default'].createElement(
-	            'h1',
-	            null,
-	            'Sample App on Heroku'
-	          ),
 	          _react2['default'].createElement(_Foo2['default'], null)
 	        );
 	      }
@@ -394,8 +389,15 @@
 /* 4 */
 /***/ function(module, exports) {
 
+	/*
+	object-assign
+	(c) Sindre Sorhus
+	@license MIT
+	*/
+
 	'use strict';
 	/* eslint-disable no-unused-vars */
+	var getOwnPropertySymbols = Object.getOwnPropertySymbols;
 	var hasOwnProperty = Object.prototype.hasOwnProperty;
 	var propIsEnumerable = Object.prototype.propertyIsEnumerable;
 
@@ -416,7 +418,7 @@
 			// Detect buggy property enumeration order in older V8 versions.
 
 			// https://bugs.chromium.org/p/v8/issues/detail?id=4118
-			var test1 = new String('abc');  // eslint-disable-line
+			var test1 = new String('abc');  // eslint-disable-line no-new-wrappers
 			test1[5] = 'de';
 			if (Object.getOwnPropertyNames(test1)[0] === '5') {
 				return false;
@@ -445,7 +447,7 @@
 			}
 
 			return true;
-		} catch (e) {
+		} catch (err) {
 			// We don't expect any of the above to throw, but better to be safe.
 			return false;
 		}
@@ -465,8 +467,8 @@
 				}
 			}
 
-			if (Object.getOwnPropertySymbols) {
-				symbols = Object.getOwnPropertySymbols(from);
+			if (getOwnPropertySymbols) {
+				symbols = getOwnPropertySymbols(from);
 				for (var i = 0; i < symbols.length; i++) {
 					if (propIsEnumerable.call(from, symbols[i])) {
 						to[symbols[i]] = from[symbols[i]];
@@ -21620,17 +21622,23 @@
 	      function render() {
 	        return _react2['default'].createElement(
 	          'div',
-	          { className: 'foo' },
+	          { className: _styles2['default'].foo },
+	          _react2['default'].createElement(
+	            'h1',
+	            null,
+	            'Example app using mocha-factory'
+	          ),
 	          _react2['default'].createElement(
 	            'h2',
-	            { className: _styles2['default'].blue },
+	            { className: _styles2['default'].dentext },
 	            this.state.title
 	          ),
 	          _react2['default'].createElement(
 	            'button',
-	            { onClick: this.enterTheDragon.bind(this) },
+	            { className: _styles2['default'].myButton, onClick: this.enterTheDragon.bind(this) },
 	            'Enter the Dragon'
 	          ),
+	          _react2['default'].createElement('hr', null),
 	          _react2['default'].createElement(
 	            'h1',
 	            null,
@@ -21708,11 +21716,15 @@
 
 
 	// module
-	exports.push([module.id, ".src-___styles__blue___1SXrU {\n  color: blue;\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiL1VzZXJzL1BhdHJpY2tMYWkvd29yay1leGFtcGxlcy9lbnp5bWUtZXhhbXBsZS1tb2NoYS9zcmMvc3R5bGVzLnNjc3MiLCJzb3VyY2VzIjpbIi9Vc2Vycy9QYXRyaWNrTGFpL3dvcmstZXhhbXBsZXMvZW56eW1lLWV4YW1wbGUtbW9jaGEvc3JjL3N0eWxlcy5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi5ibHVle1xuICBjb2xvcjogYmx1ZTtcbn1cbiJdLCJtYXBwaW5ncyI6IkFBQUEsQUFBQSxLQUFLLENBQUE7RUFDSCxLQUFLLEVBQUUsSUFBSyxHQUNiIiwibmFtZXMiOltdfQ== */", ""]);
+	exports.push([module.id, ".src-___styles__dentext___2Q5oe {\n  background-color: rgba(0, 0, 0, 0.5);\n  border-radius: 10px;\n  padding: 1em;\n}\n\nbody {\n  background: linear-gradient(232deg, #f27e27, #308ef4);\n  background-size: 400% 400%;\n  padding-top: 2em;\n  -webkit-animation: src-___styles__background-animate___3fu_e 60s ease infinite;\n  -moz-animation: src-___styles__background-animate___3fu_e 60s ease infinite;\n  animation: src-___styles__background-animate___3fu_e 60s ease infinite;\n  color: white;\n  font-family: sans-serif;\n}\n\n.src-___styles__foo___bFOFP {\n  max-width: 900px;\n  margin: 0 auto;\n  display: flex;\n  flex-direction: column;\n  align-items: center;\n}\n\ninput[type=\"text\"] {\n  padding: 10px;\n  border: none;\n  border-bottom: solid 2px #c9c9c9;\n  transition: border 0.3s;\n  font-size: 12pt;\n}\n\ninput[type=\"text\"]:focus,\ninput[type=\"text\"].src-___styles__focus___283Cs {\n  border-bottom: solid 2px #969696;\n}\n\n.src-___styles__myButton___3dbVa {\n  -moz-box-shadow: inset 0px 1px 3px 0px #91b8b3;\n  -webkit-box-shadow: inset 0px 1px 3px 0px #91b8b3;\n  box-shadow: inset 0px 1px 3px 0px #91b8b3;\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #768d87), color-stop(1, #6c7c7c));\n  background: -moz-linear-gradient(top, #768d87 5%, #6c7c7c 100%);\n  background: -webkit-linear-gradient(top, #768d87 5%, #6c7c7c 100%);\n  background: -o-linear-gradient(top, #768d87 5%, #6c7c7c 100%);\n  background: -ms-linear-gradient(top, #768d87 5%, #6c7c7c 100%);\n  background: linear-gradient(to bottom, #768d87 5%, #6c7c7c 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#768d87', endColorstr='#6c7c7c',GradientType=0);\n  background-color: #768d87;\n  -moz-border-radius: 5px;\n  -webkit-border-radius: 5px;\n  border-radius: 5px;\n  border: 1px solid #566963;\n  display: inline-block;\n  cursor: pointer;\n  color: #ffffff;\n  font-family: Arial;\n  font-size: 15px;\n  font-weight: bold;\n  padding: 11px 23px;\n  text-decoration: none;\n  text-shadow: 0px -1px 0px #2b665e;\n}\n\n.src-___styles__myButton___3dbVa:hover {\n  background: -webkit-gradient(linear, left top, left bottom, color-stop(0.05, #6c7c7c), color-stop(1, #768d87));\n  background: -moz-linear-gradient(top, #6c7c7c 5%, #768d87 100%);\n  background: -webkit-linear-gradient(top, #6c7c7c 5%, #768d87 100%);\n  background: -o-linear-gradient(top, #6c7c7c 5%, #768d87 100%);\n  background: -ms-linear-gradient(top, #6c7c7c 5%, #768d87 100%);\n  background: linear-gradient(to bottom, #6c7c7c 5%, #768d87 100%);\n  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#6c7c7c', endColorstr='#768d87',GradientType=0);\n  background-color: #6c7c7c;\n}\n\n.src-___styles__myButton___3dbVa:active {\n  position: relative;\n  top: 1px;\n}\n\n@-webkit-keyframes src-___styles__background-animate___3fu_e {\n  0% {\n    background-position: 0% 51%;\n  }\n\n  50% {\n    background-position: 100% 50%;\n  }\n\n  100% {\n    background-position: 0% 51%;\n  }\n}\n\n@-moz-keyframes src-___styles__background-animate___3fu_e {\n  0% {\n    background-position: 0% 51%;\n  }\n\n  50% {\n    background-position: 100% 50%;\n  }\n\n  100% {\n    background-position: 0% 51%;\n  }\n}\n\n@keyframes src-___styles__background-animate___3fu_e {\n  0% {\n    background-position: 0% 51%;\n  }\n\n  50% {\n    background-position: 100% 50%;\n  }\n\n  100% {\n    background-position: 0% 51%;\n  }\n}\n\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiL1VzZXJzL1BhdHJpY2tMYWkvd29yay1leGFtcGxlcy9lbnp5bWUtZXhhbXBsZS1tb2NoYS9zcmMvc3R5bGVzLnNjc3MiLCJzb3VyY2VzIjpbIi9Vc2Vycy9QYXRyaWNrTGFpL3dvcmstZXhhbXBsZXMvZW56eW1lLWV4YW1wbGUtbW9jaGEvc3JjL3N0eWxlcy5zY3NzIl0sInNvdXJjZXNDb250ZW50IjpbIi5kZW50ZXh0e1xuICBiYWNrZ3JvdW5kLWNvbG9yOiByZ2JhKDAsMCwwLDAuNSk7XG4gIGJvcmRlci1yYWRpdXM6IDEwcHg7XG4gIHBhZGRpbmc6IDFlbTtcbn1cblxuYm9keSB7XG4gIGJhY2tncm91bmQ6IGxpbmVhci1ncmFkaWVudCgyMzJkZWcsICNmMjdlMjcsICMzMDhlZjQpO1xuICBiYWNrZ3JvdW5kLXNpemU6IDQwMCUgNDAwJTtcbiAgcGFkZGluZy10b3A6IDJlbTtcblxuICAtd2Via2l0LWFuaW1hdGlvbjogYmFja2dyb3VuZC1hbmltYXRlIDYwcyBlYXNlIGluZmluaXRlO1xuICAtbW96LWFuaW1hdGlvbjogYmFja2dyb3VuZC1hbmltYXRlIDYwcyBlYXNlIGluZmluaXRlO1xuICBhbmltYXRpb246IGJhY2tncm91bmQtYW5pbWF0ZSA2MHMgZWFzZSBpbmZpbml0ZTtcblxuICBjb2xvcjogd2hpdGU7XG4gIGZvbnQtZmFtaWx5OiBzYW5zLXNlcmlmO1xufVxuXG4uZm9vIHtcbiAgbWF4LXdpZHRoOiA5MDBweDtcbiAgbWFyZ2luOiAwIGF1dG87XG4gIGRpc3BsYXk6IGZsZXg7XG4gIGZsZXgtZGlyZWN0aW9uOiBjb2x1bW47XG4gIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbmlucHV0W3R5cGU9XCJ0ZXh0XCJdIHtcbiAgcGFkZGluZzogMTBweDtcbiAgYm9yZGVyOiBub25lO1xuICBib3JkZXItYm90dG9tOiBzb2xpZCAycHggI2M5YzljOTtcbiAgdHJhbnNpdGlvbjogYm9yZGVyIDAuM3M7XG4gIGZvbnQtc2l6ZTogMTJwdDtcbn1cblxuaW5wdXRbdHlwZT1cInRleHRcIl06Zm9jdXMsXG5pbnB1dFt0eXBlPVwidGV4dFwiXS5mb2N1cyB7XG4gIGJvcmRlci1ib3R0b206IHNvbGlkIDJweCAjOTY5Njk2O1xufVxuXG4ubXlCdXR0b24ge1xuXHQtbW96LWJveC1zaGFkb3c6aW5zZXQgMHB4IDFweCAzcHggMHB4ICM5MWI4YjM7XG5cdC13ZWJraXQtYm94LXNoYWRvdzppbnNldCAwcHggMXB4IDNweCAwcHggIzkxYjhiMztcblx0Ym94LXNoYWRvdzppbnNldCAwcHggMXB4IDNweCAwcHggIzkxYjhiMztcblx0YmFja2dyb3VuZDotd2Via2l0LWdyYWRpZW50KGxpbmVhciwgbGVmdCB0b3AsIGxlZnQgYm90dG9tLCBjb2xvci1zdG9wKDAuMDUsICM3NjhkODcpLCBjb2xvci1zdG9wKDEsICM2YzdjN2MpKTtcblx0YmFja2dyb3VuZDotbW96LWxpbmVhci1ncmFkaWVudCh0b3AsICM3NjhkODcgNSUsICM2YzdjN2MgMTAwJSk7XG5cdGJhY2tncm91bmQ6LXdlYmtpdC1saW5lYXItZ3JhZGllbnQodG9wLCAjNzY4ZDg3IDUlLCAjNmM3YzdjIDEwMCUpO1xuXHRiYWNrZ3JvdW5kOi1vLWxpbmVhci1ncmFkaWVudCh0b3AsICM3NjhkODcgNSUsICM2YzdjN2MgMTAwJSk7XG5cdGJhY2tncm91bmQ6LW1zLWxpbmVhci1ncmFkaWVudCh0b3AsICM3NjhkODcgNSUsICM2YzdjN2MgMTAwJSk7XG5cdGJhY2tncm91bmQ6bGluZWFyLWdyYWRpZW50KHRvIGJvdHRvbSwgIzc2OGQ4NyA1JSwgIzZjN2M3YyAxMDAlKTtcblx0ZmlsdGVyOnByb2dpZDpEWEltYWdlVHJhbnNmb3JtLk1pY3Jvc29mdC5ncmFkaWVudChzdGFydENvbG9yc3RyPScjNzY4ZDg3JywgZW5kQ29sb3JzdHI9JyM2YzdjN2MnLEdyYWRpZW50VHlwZT0wKTtcblx0YmFja2dyb3VuZC1jb2xvcjojNzY4ZDg3O1xuXHQtbW96LWJvcmRlci1yYWRpdXM6NXB4O1xuXHQtd2Via2l0LWJvcmRlci1yYWRpdXM6NXB4O1xuXHRib3JkZXItcmFkaXVzOjVweDtcblx0Ym9yZGVyOjFweCBzb2xpZCAjNTY2OTYzO1xuXHRkaXNwbGF5OmlubGluZS1ibG9jaztcblx0Y3Vyc29yOnBvaW50ZXI7XG5cdGNvbG9yOiNmZmZmZmY7XG5cdGZvbnQtZmFtaWx5OkFyaWFsO1xuXHRmb250LXNpemU6MTVweDtcblx0Zm9udC13ZWlnaHQ6Ym9sZDtcblx0cGFkZGluZzoxMXB4IDIzcHg7XG5cdHRleHQtZGVjb3JhdGlvbjpub25lO1xuXHR0ZXh0LXNoYWRvdzowcHggLTFweCAwcHggIzJiNjY1ZTtcbn1cbi5teUJ1dHRvbjpob3ZlciB7XG5cdGJhY2tncm91bmQ6LXdlYmtpdC1ncmFkaWVudChsaW5lYXIsIGxlZnQgdG9wLCBsZWZ0IGJvdHRvbSwgY29sb3Itc3RvcCgwLjA1LCAjNmM3YzdjKSwgY29sb3Itc3RvcCgxLCAjNzY4ZDg3KSk7XG5cdGJhY2tncm91bmQ6LW1vei1saW5lYXItZ3JhZGllbnQodG9wLCAjNmM3YzdjIDUlLCAjNzY4ZDg3IDEwMCUpO1xuXHRiYWNrZ3JvdW5kOi13ZWJraXQtbGluZWFyLWdyYWRpZW50KHRvcCwgIzZjN2M3YyA1JSwgIzc2OGQ4NyAxMDAlKTtcblx0YmFja2dyb3VuZDotby1saW5lYXItZ3JhZGllbnQodG9wLCAjNmM3YzdjIDUlLCAjNzY4ZDg3IDEwMCUpO1xuXHRiYWNrZ3JvdW5kOi1tcy1saW5lYXItZ3JhZGllbnQodG9wLCAjNmM3YzdjIDUlLCAjNzY4ZDg3IDEwMCUpO1xuXHRiYWNrZ3JvdW5kOmxpbmVhci1ncmFkaWVudCh0byBib3R0b20sICM2YzdjN2MgNSUsICM3NjhkODcgMTAwJSk7XG5cdGZpbHRlcjpwcm9naWQ6RFhJbWFnZVRyYW5zZm9ybS5NaWNyb3NvZnQuZ3JhZGllbnQoc3RhcnRDb2xvcnN0cj0nIzZjN2M3YycsIGVuZENvbG9yc3RyPScjNzY4ZDg3JyxHcmFkaWVudFR5cGU9MCk7XG5cdGJhY2tncm91bmQtY29sb3I6IzZjN2M3Yztcbn1cbi5teUJ1dHRvbjphY3RpdmUge1xuXHRwb3NpdGlvbjpyZWxhdGl2ZTtcblx0dG9wOjFweDtcbn1cblxuQC13ZWJraXQta2V5ZnJhbWVzIGJhY2tncm91bmQtYW5pbWF0ZSB7XG4gICAgMCV7YmFja2dyb3VuZC1wb3NpdGlvbjowJSA1MSV9XG4gICAgNTAle2JhY2tncm91bmQtcG9zaXRpb246MTAwJSA1MCV9XG4gICAgMTAwJXtiYWNrZ3JvdW5kLXBvc2l0aW9uOjAlIDUxJX1cbn1cbkAtbW96LWtleWZyYW1lcyBiYWNrZ3JvdW5kLWFuaW1hdGUge1xuICAgIDAle2JhY2tncm91bmQtcG9zaXRpb246MCUgNTElfVxuICAgIDUwJXtiYWNrZ3JvdW5kLXBvc2l0aW9uOjEwMCUgNTAlfVxuICAgIDEwMCV7YmFja2dyb3VuZC1wb3NpdGlvbjowJSA1MSV9XG59XG5Aa2V5ZnJhbWVzIGJhY2tncm91bmQtYW5pbWF0ZSB7XG4gICAgMCV7YmFja2dyb3VuZC1wb3NpdGlvbjowJSA1MSV9XG4gICAgNTAle2JhY2tncm91bmQtcG9zaXRpb246MTAwJSA1MCV9XG4gICAgMTAwJXtiYWNrZ3JvdW5kLXBvc2l0aW9uOjAlIDUxJX1cbn1cbiJdLCJtYXBwaW5ncyI6IkFBQUEsQUFBQSxRQUFRLENBQUE7RUFDTixnQkFBZ0IsRUFBRSxrQkFBSTtFQUN0QixhQUFhLEVBQUUsSUFBSztFQUNwQixPQUFPLEVBQUUsR0FBSSxHQUNkOztBQUVELEFBQUEsSUFBSSxDQUFDO0VBQ0gsVUFBVSxFQUFFLHlDQUFlO0VBQzNCLGVBQWUsRUFBRSxTQUFVO0VBQzNCLFdBQVcsRUFBRSxHQUFJO0VBRWpCLGlCQUFpQixFQUFFLG9DQUFxQztFQUN4RCxjQUFjLEVBQUUsb0NBQXFDO0VBQ3JELFNBQVMsRUFBRSxvQ0FBcUM7RUFFaEQsS0FBSyxFQUFFLEtBQU07RUFDYixXQUFXLEVBQUUsVUFBVyxHQUN6Qjs7QUFFRCxBQUFBLElBQUksQ0FBQztFQUNILFNBQVMsRUFBRSxLQUFNO0VBQ2pCLE1BQU0sRUFBRSxNQUFPO0VBQ2YsT0FBTyxFQUFFLElB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 */", ""]);
 
 	// exports
 	exports.locals = {
-		"blue": "src-___styles__blue___1SXrU"
+		"dentext": "src-___styles__dentext___2Q5oe",
+		"background-animate": "src-___styles__background-animate___3fu_e",
+		"foo": "src-___styles__foo___bFOFP",
+		"focus": "src-___styles__focus___283Cs",
+		"myButton": "src-___styles__myButton___3dbVa"
 	};
 
 /***/ },
@@ -23571,7 +23583,7 @@
 
 	var React = __webpack_require__(1);
 
-	var styles = { fontSize: '2em', width: '90%', maxWidth: '300px' };
+	var styles = { width: '90%', maxWidth: '300px' };
 
 	module.exports = function (_React$Component) {
 	  _inherits(SearchBar, _React$Component);
@@ -23647,7 +23659,7 @@
 	var GIPHY_LOADING_URL = 'https://giphy.com/gifs/loop-loading-loader-xTk9ZvMnbIiIew7IpW';
 	var styles = {
 	  minHeight: '310px',
-	  margin: '0.5em'
+	  marginTop: '1em'
 	};
 
 	var ImageDisplay = function (_React$Component) {

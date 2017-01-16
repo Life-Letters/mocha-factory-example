@@ -1,6 +1,6 @@
 const React = require('react');
 
-const styles = {fontSize: '2em', width: '90%', maxWidth: '300px'};
+const styles = {width: '90%', maxWidth: '300px'};
 
 module.exports =
 class SearchBar extends React.Component {
@@ -23,13 +23,15 @@ class SearchBar extends React.Component {
   }
 
   render () {
-    return <input
-             type="text"
-             onChange={this.handleChange}
-             onKeyUp={this.handleKeyUp}
-             placeholder="Type a tag name here"
-             style={styles}
-             value={this.state.searchTerm}
-            />
+    return (
+      <input
+        type="text"
+        onChange={this.handleChange}
+        onKeyUp={this.handleKeyUp}
+        placeholder="Type a tag name here"
+        style={styles}
+        value={this.state.searchTerm}
+      />
+    );
   }
 }

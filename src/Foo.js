@@ -34,9 +34,11 @@ class Foo extends Component {
 
   render() {
     return (
-      <div className="foo">
-        <h2 className={styles.blue}>{this.state.title}</h2>
-        <button onClick={this.enterTheDragon.bind(this)}>Enter the Dragon</button>
+      <div className={styles.foo}>
+        <h1>Example app using mocha-factory</h1>
+        <h2 className={styles.dentext}>{this.state.title}</h2>
+        <button className={styles.myButton} onClick={this.enterTheDragon.bind(this)}>Enter the Dragon</button>
+        <hr/>
         <h1>gif grabbr!</h1>
         <p>Find a GIF on <a href='http://giphy.com'>giphy</a>. Keep pressing enter for more results.</p>
         <div>

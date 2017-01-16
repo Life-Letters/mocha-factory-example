@@ -4,7 +4,7 @@ const loadingImage = require('./loading.gif');
 const GIPHY_LOADING_URL = `https://giphy.com/gifs/loop-loading-loader-xTk9ZvMnbIiIew7IpW`;
 const styles = {
   minHeight: '310px',
-  margin: '0.5em'
+  marginTop: '1em'
 };
 
 class ImageDisplay extends React.Component {

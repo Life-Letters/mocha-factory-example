@@ -12,8 +12,7 @@
     "test:all": "node test/unit.js && node test/journey.js",
     "watch:test:unit": "nodemon -x 'npm run test:unit'",
     "watch:serve": "webpack-dev-server --watch",
-    "git:push": "npm run test:all && git push",
-    "postinstall": "npm run test"
+    "git:push": "npm run test:all && git push"
   },
   "engineStrict": true,
   "engines": {

@@ -20,11 +20,11 @@ const makeMounted = () => mount(<Foo />)
 describe("Testing Component", function() {
 
   it("Contains an element with class 'foo' - find elements", function() {
-    expect(makeShallow().is('.foo')).to.equal(true);
+    expect(makeShallow().is(`.${styles.foo}`)).to.equal(true);
   });
 
   it("Contains only a single element with class 'foo' - counting elements", function() {
-    expect(makeShallow().find('.foo').length).to.equal(1);
+    expect(makeShallow().find(`.${styles.foo}`).length).to.equal(1);
   });
 
   it('Passes loading:true to ImageDisplay - prop checking',  function() {
@@ -47,14 +47,15 @@ describe("Testing Component", function() {
     expect(onSearchStub.calledTwice).to.equal(true);
   });
 
-  it('Stub Single function', function(){
+  it('Stub Single function', function(done){
 
     // Note - Its easiest to stub the function in the react component than to actually try to intercept Calls and stuff
     // YOU MUST STUB the function before you create the component!
     // REMEMBER not to use ARROW function else the "this" gets screwed and u cant use setState
     // We make a promise here so we can catch it later down the test
     var getGifPromise;
-    sinon.stub(Foo.prototype, '_handleSearch', function(done){
+
+    sinon.stub(Foo.prototype, '_handleSearch', function(){
       this.setState({loading: true});
 
       // Mocked Sample response as if API was called
@@ -83,13 +84,13 @@ describe("Testing Component", function() {
     searchField.simulate('change', {target: {value: 'cat'}});
 
     // Try to make it as real as possible, We put the result down here so its a bit more legible as a test story
-    getGifPromise.then(function(gif){
+    getGifPromise.then((gif) => {
       foo.setState({ loading: false, gif: gif , mockedUrl});
       expect(foo.state().gif.url).to.equal(mockedUrl);
-      this.done();
+      done();
     }).catch((error) => {
       console.log("getGifPromise rejected", error);
-      this.done();
+      done();
     });
 
   });
