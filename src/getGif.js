@@ -3,7 +3,10 @@ const axios = require('axios');
 const GIPHY_API_URL = `https://api.giphy.com`;
 const GIPHY_PUB_KEY = `dc6zaTOxFJmzC`;
 
-module.exports = function getSticker (tagName) {
+
+// Its Important to write your functions like this so you can easily stub it.
+
+export const getGif = (tagName) => {
   const url = `${GIPHY_API_URL}/v1/gifs/random?api_key=${GIPHY_PUB_KEY}&tag=${tagName}`;
   return new Promise((resolve, reject) => {
     axios.get(url)
@@ -18,4 +21,9 @@ module.exports = function getSticker (tagName) {
       })
       .catch(reject);
   })
+}
+
+
+export const greet = (name) => {
+  return `Hello ${name}`;
 }

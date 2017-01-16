@@ -89,5 +89,14 @@ Find a way to exit the process cleanly after its finished journey
 
 ## Other supporting docs/examples
 
-Sample project (using karma is not recommended)
-https://github.com/alextaylor000/gif-grabbr
+Not all of these are implemented in the test examples but might be useful one day  
+
+- General Stubbing and testing  
+http://brewhouse.io/2016/03/18/accelerate-your-react-testing-with-enzyme.html  
+http://staxmanade.com/2015/11/testing-asyncronous-code-with-mochajs-and-es7-async-await/
+
+- Async / Await es7  
+https://github.com/lalitkapoor/node-pg-util/blob/master/src/test.js  
+
+- Chai Promises 'eventually'  
+http://chaijs.com/plugins/chai-as-promised/

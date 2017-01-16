@@ -12,7 +12,8 @@ import styles from '../../src/styles.scss';
 
 // Setup
 // Convenience method, especially useful when your component has alot of parameters
-const makeShallow = (r) => shallow(<Foo />);
+const makeShallow = () => shallow(<Foo />);
+const makeMounted = () => mount(<Foo />)
 
 // Test suite
 // Don't use es6 Arrow functions because it has some scoping confusion (with 'this')
@@ -46,34 +47,47 @@ describe("Testing Component", function() {
     expect(onSearchStub.calledTwice).to.equal(true);
   });
 
-  it('Stubbed getGif', function(){
+  it('Stub Single function', function(){
 
-      // Note this will be using the REAL getGif()
-      const Foo = makeShallow();
-      const mockedUrl = 'https://www.google.com.au/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
+    // Note - Its easiest to stub the function in the react component than to actually try to intercept Calls and stuff
+    // YOU MUST STUB the function before you create the component!
+    // REMEMBER not to use ARROW function else the "this" gets screwed and u cant use setState
+    // We make a promise here so we can catch it later down the test
+    var getGifPromise;
+    sinon.stub(Foo.prototype, '_handleSearch', function(done){
+      this.setState({loading: true});
 
-      // We'll stub $.get so a request is not sent
-      var get = sinon.stub($, 'get');
-      get.yields();
-
-      // Make a stub for the function we want to override
-      var stub = function(tagName){
-        return mockedUrl;
+      // Mocked Sample response as if API was called
+      const mockedGifResponse = {
+        url: mockedUrl,
+        width: 100,
+        sourceUrl: mockedUrl
       };
 
-      // Stub it
-      getGif('cat', stub);
+      // Fake a promise
+      getGifPromise = new Promise(function(resolve, reject) {
+        setTimeout(()=>{
+          resolve(mockedGifResponse);
+        },1500);
+      });
 
-      // Simulate the search
-      const searchField = Foo.find('input');
-      searchField.simulate('change', {target: {value: 'cat'}});
+    });
 
-      // Make sure shit works
+    // Render AFTER you stub
+    const foo = makeMounted();
+    const mockedUrl = 'https://www.google.com.au/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png';
 
-      // Gotta restore it
-      get.restore();
-      sinon.assert.calledOnce(callback);
+    // Find SearchBar and simulate change
+    const searchField = foo.find('SearchBar');
+    expect(searchField.length).to.equal(1);
+    searchField.simulate('change', {target: {value: 'cat'}});
 
+    // Try to make it as real as possible, We put the result down here so its a bit more legible as a test story
+    getGifPromise.then((gif)=>{
+      this.setState({ loading: false, gif: gif , mockedUrl});
+      expect(foo.state().gif.url).to.equal(mockedUrl);
+      done();
+    });
 
   });
 

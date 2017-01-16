@@ -19,11 +19,11 @@ class Foo extends Component {
     }
   }
 
-  handleSearch(term){
+  _handleSearch(term){
     this.setState({loading: true});
     getGif(term).then((gif) => {
       this.setState({loading: false, gif, term});
-    })
+    });
   }
 
   enterTheDragon(){
@@ -40,7 +40,7 @@ class Foo extends Component {
         <h1>gif grabbr!</h1>
         <p>Find a GIF on <a href='http://giphy.com'>giphy</a>. Keep pressing enter for more results.</p>
         <div>
-          <SearchBar onSearch={this.handleSearch.bind(this)}/>
+          <SearchBar onSearch={this._handleSearch.bind(this)}/>
         </div>
         <ImageDisplay
           loading={this.state.loading}
