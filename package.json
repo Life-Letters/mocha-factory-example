@@ -63,7 +63,7 @@
     "wd-sync": "^1.2.5",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.16.2",
-    "mocha-factory": "https://github.com/Life-Letters/Mocha-Factory.git"
+    "mocha-factory": "https://github.com/Life-Letters/mocha-factory.git"
   },
   "dependencies": {
     "axios": "^0.15.3",
