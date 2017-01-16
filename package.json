@@ -1,18 +1,19 @@
 {
-  "name": "enzyme-example-mocha",
-  "version": "0.1.0",
-  "description": "Example project with React + Enzyme + Mocha",
-  "main": "build/index.js",
+  "name": "Mocha-Factory",
+  "version": "1.0.0",
+  "description": "A Mocha Instance generator that plays well with Florey testing pipelines",
+  "main": "lib/MochaFactory.js",
   "scripts": {
     "build": "webpack",
     "test": "npm run test:unit",
     "start": "npm run build && node server",
+    "seleniumServer" : "selenium-standalone start | node server ",
     "test:unit": "node test/unit.js",
-    "test:journey": "selenium-standalone start | node server | node ./test/journey.js",
+    "test:journey": "node ./test/journey.js",
     "test:journey-js": "npm run build && node ./test/journey-js.js",
     "test:all": "selenium-standalone start | npm run start | node test/.mocha.js | node ./test/journey.js | node ./test/.selenium.js",
     "watch:test:unit": "nodemon -x 'npm run test:unit'",
-    "watch:test:journey": "selenium-standalone start | npm run start | nodemon -x 'node ./test/journey.js'",
+    "watch:test:journey": "npm run start | nodemon -x 'node ./test/journey.js'",
     "watch:test:journey-js": "npm run start | nodemon -x 'node ./test/journey-js.js'",
     "watch:test:all": "selenium-standalone start | npm run start | nodemon -x 'node test/.mocha.js | node ./test/journey.js | node ./test/journey-js.js'",
     "watch:serve": "webpack-dev-server --watch",
@@ -67,11 +68,13 @@
     "url-loader": "0.5.7",
     "wd-sync": "^1.2.5",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.16.2"
+    "webpack-dev-server": "^1.16.2",
+    "mocha-factory": "git@github.com:Life-Letters/Mocha-Factory.git"
   },
   "dependencies": {
     "axios": "^0.15.3",
     "react": "^15.4.0",
     "react-dom": "^15.4.0"
+
   }
 }
