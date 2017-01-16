@@ -5,17 +5,13 @@
   "main": "lib/MochaFactory.js",
   "scripts": {
     "build": "webpack",
-    "test": "npm run test:unit",
+    "test": "npm run test:all",
     "start": "npm run build && node server",
-    "seleniumServer" : "selenium-standalone start | node server ",
     "test:unit": "node test/unit.js",
     "test:journey": "node ./test/journey.js",
-    "test:journey-js": "npm run build && node ./test/journey-js.js",
-    "test:all": "selenium-standalone start | npm run start | node test/.mocha.js | node ./test/journey.js | node ./test/.selenium.js",
+    "test:selenium": "selenium-standalone start | npm run start && node ./test/selenium.js",
+    "test:all": "npm run start | node test/unit.js | node ./test/journey.js",
     "watch:test:unit": "nodemon -x 'npm run test:unit'",
-    "watch:test:journey": "npm run start | nodemon -x 'node ./test/journey.js'",
-    "watch:test:journey-js": "npm run start | nodemon -x 'node ./test/journey-js.js'",
-    "watch:test:all": "selenium-standalone start | npm run start | nodemon -x 'node test/.mocha.js | node ./test/journey.js | node ./test/journey-js.js'",
     "watch:serve": "webpack-dev-server --watch",
     "git:push": "npm run test:all && git push",
     "postinstall": "npm run test"
@@ -41,7 +37,6 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.4.3",
     "body-parser": "^1.15.2",
-    "chai": "^3.5.0",
     "chai-webdriver-promised": "^4.0.3",
     "css-loader": "0.25.0",
     "css-modules-require-hook": "^4.0.5",
@@ -62,7 +57,6 @@
     "resolve-url-loader": "1.6.0",
     "sass-loader": "4.0.2",
     "selenium-html-js-converter": "^0.4.7",
-    "selenium-webdriver": "^3.0.1",
     "sinon": "^1.17.7",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
@@ -74,7 +68,8 @@
   "dependencies": {
     "axios": "^0.15.3",
     "react": "^15.4.0",
-    "react-dom": "^15.4.0"
-
+    "react-dom": "^15.4.0",
+    "selenium-webdriver": "^3.0.1",
+    "chai": "^3.5.0"
   }
 }

@@ -1,24 +1,18 @@
 # Example testing structure
 
-Example projects how to test various things. We use Enzyme/Mocha/Chai/Karma/Jasmine/PhantomJs for this
+Example projects how to write tests in Enzyme/Mocha/Chai and use the mocha-factory library.
 
 As an overview theres 3 types of tests, They can be ran with the following commands:
+
+Note : Selenium tests are not considered part of the usual suite. Suggest you write your journeys as webdriver/journey tests if they are critical.
 
 ```
   npm run test:unit
   npm run test:journey
-  npm run test:journey-js
+  npm run test:selenium
 
   // With watch
   npm run watch:test:unit
-  npm run watch:test:journey
-  npm run watch:test:journey-js
-```
-
-If you fancy OSX notifications install the notifier :
-
-```
-sudo gem install terminal-notifier
 ```
 
 Some environment variables are expected. Optional is marked with <OPTIONAL_...> else its required. For development make a '.env' file in root:  
@@ -27,15 +21,15 @@ For this Project we use port 3999 and the journey test scripts assume that port
 ```
   NODE_ENV="local"
   PORT="3999"
-  SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>"
+  SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>" <-- from mocha-factory
 ```
 
 Look at these files to see how to set them up in your own Project
 
 ```
-  test/journey-js.js
-  test/journey.js
   test/unit.js
+  test/journey.js
+  test/selenium.js
 ```
 
 ## Unit, Classes, React Components
@@ -45,6 +39,8 @@ Please note you must import the scss files in your tests.
 
 [Enzyme api docs](http://airbnb.io/enzyme/docs/api/index.html)
 
+Sample script to run the demo
+
 ```
 npm run watch:test
 ```
@@ -52,14 +48,11 @@ npm run watch:test
 ## Journey Testing
 
 Testing UI from a browser perspective using Selenium/Chrome/PhantomJs/Selenum-webdriver  
-Note: You must install the correct webdrivers please refer here [link](https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver)  
-ChromeDriver: You then need to unzip the package and then copy the file to /usr/local/bin
+Note: You must install the correct webdrivers please refer here [link](https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver)
 
-Also Install selenium-standalone [link](https://www.npmjs.com/package/selenium-standalone)
+ChromeDriver: To use chrome, download this then need to unzip the package and then copy the file to /usr/local/bin.
 
-Install Selenium IDE for easier test generation [link](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
-
-Run script
+Sample script to run the demo
 
 ```
   npm run test:journey
@@ -69,15 +62,17 @@ Run script
 
 Because the Selenium RC doesnt even accept Javascript its a bit awkward working with Javascript testing scripts.
 
-Therefore it is recommended you write the test in HTML and run it with Selenium-Html-js-converter. Btw you need selenium-standalone installed
+The selenium test script will parse the default saved format (html) of the Selenium IDE in firefox using Selenium-Html-js-converter and execute them. Btw you need selenium-standalone installed
 [link](https://www.npmjs.com/package/selenium-html-js-converter)  
+[link](https://www.npmjs.com/package/selenium-standalone)
 
-If you still want to run js tests theres also an example
+Install Selenium IDE for easier test generation [link](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
+
+Sample script to run the demo
 
 ```
-npm run test:journey-js
+  npm run test:selenium
 ```
-
 ## Serving the test app
 
 This serves the actual react app
@@ -95,7 +90,7 @@ Simply mirror any environment variables in heroku and it should behave as expect
 
 ## TODO
 
-Find a way to exit the process cleanly after its finished journey
+Find a way to exit the process cleanly after its finished selenium
 
 ## Other supporting docs/examples
 

@@ -8,7 +8,7 @@ const converter = require("selenium-html-js-converter"),
       mocha = require('mocha');
 
 // Your test files and export path
-const TEST_SCRIPTS_DIR = path.resolve(__dirname, 'Journey/Tests');
+const TEST_SCRIPTS_DIR = path.resolve(__dirname, 'Journey/selenium');
 const EXPORT_DIR = path.resolve(__dirname, 'Journey/Export')
 
 // Convert your tests
