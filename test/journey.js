@@ -7,7 +7,7 @@ var server = require('../server.js');
 var MochaFactory = require('mocha-factory');
 
 MochaFactory.setup({
-  testTitle : `${process.env.npm_package_name} - Journey tests`,
+  testTitle : `${process.env.npm_package_name} - Journey tests - ${process.env.NODE_ENV}`,
   slackHook : process.env.SLACK_DEVELOPMENT_HOOK_URL,
   username: 'Florey',
   channel: '#deployment'
