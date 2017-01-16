@@ -1,5 +1,5 @@
 import React from 'react';
-import { expect } from 'chai';
+import { expect, assert } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 import sinon from 'sinon';
 
@@ -83,10 +83,13 @@ describe("Testing Component", function() {
     searchField.simulate('change', {target: {value: 'cat'}});
 
     // Try to make it as real as possible, We put the result down here so its a bit more legible as a test story
-    getGifPromise.then((gif)=>{
-      this.setState({ loading: false, gif: gif , mockedUrl});
+    getGifPromise.then(function(gif){
+      foo.setState({ loading: false, gif: gif , mockedUrl});
       expect(foo.state().gif.url).to.equal(mockedUrl);
-      done();
+      this.done();
+    }).catch((error) => {
+      console.log("getGifPromise rejected", error);
+      this.done();
     });
 
   });

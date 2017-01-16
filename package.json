@@ -1,8 +1,7 @@
 {
-  "name": "Mocha-Factory",
+  "name": "enzyme-exmaple-mocha",
   "version": "1.0.0",
-  "description": "A Mocha Instance generator that plays well with Florey testing pipelines",
-  "main": "lib/MochaFactory.js",
+  "description": "Example Project to use Mocha-factory and write unit/journey/selenium tests",
   "scripts": {
     "build": "webpack",
     "test": "npm run test:all",
@@ -10,7 +9,7 @@
     "test:unit": "node test/unit.js",
     "test:journey": "node ./test/journey.js",
     "test:selenium": "selenium-standalone start | npm run start && node ./test/selenium.js",
-    "test:all": "npm run start | node test/unit.js | node ./test/journey.js",
+    "test:all": "node test/unit.js && node test/journey.js",
     "watch:test:unit": "nodemon -x 'npm run test:unit'",
     "watch:serve": "webpack-dev-server --watch",
     "git:push": "npm run test:all && git push",
@@ -37,7 +36,6 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.4.3",
     "body-parser": "^1.15.2",
-    "chai-webdriver-promised": "^4.0.3",
     "css-loader": "0.25.0",
     "css-modules-require-hook": "^4.0.5",
     "dotenv": "^4.0.0",

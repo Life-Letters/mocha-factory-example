@@ -1,9 +1,17 @@
 // Babel our imports
 require('babel-register')();
+require('dotenv');
 
 // Serve our app
 var server = require('../server.js');
 var MochaFactory = require('mocha-factory');
+
+MochaFactory.setup({
+  testTitle : `${process.env.npm_package_name} - Journey tests`,
+  slackHook : process.env.SLACK_DEVELOPMENT_HOOK_URL,
+  username: 'Florey',
+  channel: '#deployment'
+});
 
 // Add each .js file to the mocha instance
 MochaFactory.addFiles('./test/Journey/suites','.js');

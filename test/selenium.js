@@ -1,3 +1,5 @@
+require('dotenv');
+
 const converter = require("selenium-html-js-converter"),
       path = require('path'),
       wdSync = require('wd-sync'),
