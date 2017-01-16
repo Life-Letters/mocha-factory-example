@@ -1,7 +1,7 @@
-const converter = require("selenium-html-js-converter");
-const path = require('path');
-const wdSync = require('wd-sync');
-const fs = require('fs');
+const converter = require("selenium-html-js-converter"),
+      path = require('path'),
+      wdSync = require('wd-sync'),
+      fs = require('fs');
 
 // Your test files and export path
 const TEST_SCRIPTS_DIR = path.resolve(__dirname, 'Journey/Tests');
@@ -15,9 +15,10 @@ fs.readdir(TEST_SCRIPTS_DIR, (err, files) => {
   });
 })
 
-// // Your list of tests
+// Your list of tests
 var list_of_tests = new Array();
 
+// Push all the Exported tests into the array
 fs.readdir(EXPORT_DIR, (err, files) => {
   files.forEach(file => {
     const test = require(`${EXPORT_DIR}\/${file}`);
@@ -31,7 +32,7 @@ var client = wdSync.remote()
     , sync = client.sync;
 
 sync(function(){
-    browser.init( { browserName: 'chrome'} );
+    browser.init( { browserName: 'phantomjs'} );
     for(var test of list_of_tests){
       test(browser);
     }
@@ -44,7 +45,7 @@ var client2 = wdSync.remote()
 
 // Second browser
 sync(function(){
-    browser2.init( { browserName: 'chrome'} );
+    browser2.init( { browserName: 'phantomjs'} );
     for(var test of list_of_tests){
       test(browser2);
     }

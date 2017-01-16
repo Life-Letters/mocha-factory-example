@@ -32,8 +32,9 @@ node_modules
 # Optional REPL history
 .node_repl_history
 
-# screenshots form tests
+# screenshots form tests and exports from test
 screenshots
+test/Journey/Export
 
 #.env
 .env

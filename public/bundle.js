@@ -21552,13 +21552,13 @@
 
 	var _getGif2 = _interopRequireDefault(_getGif);
 
-	var _searchBar = __webpack_require__(209);
+	var _SearchBar = __webpack_require__(209);
 
-	var _searchBar2 = _interopRequireDefault(_searchBar);
+	var _SearchBar2 = _interopRequireDefault(_SearchBar);
 
-	var _imageDisplay = __webpack_require__(210);
+	var _ImageDisplay = __webpack_require__(210);
 
-	var _imageDisplay2 = _interopRequireDefault(_imageDisplay);
+	var _ImageDisplay2 = _interopRequireDefault(_ImageDisplay);
 
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
@@ -21590,9 +21590,9 @@
 	  }
 
 	  _createClass(Foo, [{
-	    key: 'handleSearch',
+	    key: '_handleSearch',
 	    value: function () {
-	      function handleSearch(term) {
+	      function _handleSearch(term) {
 	        var _this2 = this;
 
 	        this.setState({ loading: true });
@@ -21601,7 +21601,7 @@
 	        });
 	      }
 
-	      return handleSearch;
+	      return _handleSearch;
 	    }()
 	  }, {
 	    key: 'enterTheDragon',
@@ -21650,9 +21650,9 @@
 	          _react2['default'].createElement(
 	            'div',
 	            null,
-	            _react2['default'].createElement(_searchBar2['default'], { onSearch: this.handleSearch.bind(this) })
+	            _react2['default'].createElement(_SearchBar2['default'], { onSearch: this._handleSearch.bind(this) })
 	          ),
-	          _react2['default'].createElement(_imageDisplay2['default'], {
+	          _react2['default'].createElement(_ImageDisplay2['default'], {
 	            loading: this.state.loading,
 	            url: this.state.gif.url,
 	            width: this.state.gif.width,
@@ -22029,13 +22029,18 @@
 
 	'use strict';
 
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
 	var axios = __webpack_require__(184);
 	// sample: http://api.giphy.com/v1/stickers/random?api_key=dc6zaTOxFJmzC&tag=oops
 	var GIPHY_API_URL = 'https://api.giphy.com';
 	var GIPHY_PUB_KEY = 'dc6zaTOxFJmzC';
 
-	module.exports = function () {
-	  function getSticker(tagName) {
+	// Its Important to write your functions like this so you can easily stub it.
+
+	var getGif = exports.getGif = function () {
+	  function getGif(tagName) {
 	    var url = GIPHY_API_URL + '/v1/gifs/random?api_key=' + GIPHY_PUB_KEY + '&tag=' + tagName;
 	    return new Promise(function (resolve, reject) {
 	      axios.get(url).then(function (response) {
@@ -22050,7 +22055,15 @@
 	    });
 	  }
 
-	  return getSticker;
+	  return getGif;
+	}();
+
+	var greet = exports.greet = function () {
+	  function greet(name) {
+	    return 'Hello ' + name;
+	  }
+
+	  return greet;
 	}();
 
 /***/ },
@@ -23629,6 +23642,7 @@
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 	var React = __webpack_require__(1);
+	var loadingImage = __webpack_require__(211);
 
 	var GIPHY_LOADING_URL = 'https://giphy.com/gifs/loop-loading-loader-xTk9ZvMnbIiIew7IpW';
 	var styles = {
@@ -23659,7 +23673,7 @@
 	    key: 'render',
 	    value: function () {
 	      function render() {
-	        var url = this.props.loading ? 'loading.gif' : this.props.url;
+	        var url = this.props.loading ? loadingImage : this.props.url;
 	        var width = this.props.width || 200;
 	        return React.createElement(
 	          'div',
@@ -23680,6 +23694,12 @@
 	}(React.Component);
 
 	exports['default'] = ImageDisplay;
+
+/***/ },
+/* 211 */
+/***/ function(module, exports, __webpack_require__) {
+
+	module.exports = __webpack_require__.p + "5be365b4576b73da8de3e8e7cf5ba94d.gif";
 
 /***/ }
 /******/ ]);

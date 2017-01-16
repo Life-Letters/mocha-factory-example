@@ -21,11 +21,21 @@ If you fancy OSX notifications install the notifier :
 sudo gem install terminal-notifier
 ```
 
-Some environment variables are expected. Optional is marked with <OPTIONAL_...> else its required. For development make a '.env' file in root:
+Some environment variables are expected. Optional is marked with <OPTIONAL_...> else its required. For development make a '.env' file in root:  
+For this Project we use port 3999 and the journey test scripts assume that port
 
 ```
   NODE_ENV="local"
+  PORT="3999"
   SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>"
+```
+
+Look at these files to see how to set them up in your own Project
+
+```
+  test/journey-js.js
+  test/journey.js
+  test/unit.js
 ```
 
 ## Unit, Classes, React Components
