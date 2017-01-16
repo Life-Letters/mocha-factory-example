@@ -1,6 +1,6 @@
 import React, { PropTypes , Component} from 'react';
 import styles from './styles.scss';
-import getGif from './getGif';
+import { getGif } from './getGif';
 import SearchBar from './SearchBar';
 import ImageDisplay from './ImageDisplay';
 
