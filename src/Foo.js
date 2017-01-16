@@ -1,8 +1,8 @@
 import React, { PropTypes , Component} from 'react';
 import styles from './styles.scss';
 import getGif from './getGif';
-import SearchBar from './searchBar';
-import ImageDisplay from './imageDisplay';
+import SearchBar from './SearchBar';
+import ImageDisplay from './ImageDisplay';
 
 const propTypes = {};
 
