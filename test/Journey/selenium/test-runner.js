@@ -18,7 +18,8 @@ describe('Selenium tests - made by IDE', function() {
 
     sync(function(){
       browser.init( { browserName: 'phantomjs'} );
-        for(var test of testList){
+        for(var testfile of testList){
+          const test = require(testfile);
           test(browser);
           console.log(`Test succeeded : ${test.name}`)
         }
