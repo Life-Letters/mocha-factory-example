@@ -4,7 +4,7 @@ Example projects how to write tests in Enzyme/Mocha/Chai and use the mocha-facto
 
 As an overview theres 3 types of tests, They can be ran with the following commands:
 
-Note : Selenium tests are not considered part of the usual suite. Suggest you write your journeys as webdriver/journey tests if they are critical.
+Note : Selenium tests are not considered part of the usual suite for now. Suggest you write your journeys as webdriver/journey tests if they are critical.
 
 ```
   npm run test:unit
@@ -39,10 +39,16 @@ Please note you must import the scss files in your tests.
 
 [Enzyme api docs](http://airbnb.io/enzyme/docs/api/index.html)
 
-Sample script to run the demo
+Files to look at :
 
 ```
-npm run watch:test
+  'test/unit.js'
+```
+
+Script to run the demo
+
+```
+npm run test:unit
 ```
 
 ## Journey Testing
@@ -52,23 +58,37 @@ Note: You must install the correct webdrivers please refer here [link](https://g
 
 ChromeDriver: To use chrome, download this then need to unzip the package and then copy the file to /usr/local/bin.
 
-Sample script to run the demo
+Files to look at :
+
+```
+  'test/journey.js'
+```
+
+Script to run the demo
 
 ```
   npm run test:journey
 ```
 
-##### Selenium Script formats
+##### Selenium IDE Script formats
 
 Because the Selenium RC doesnt even accept Javascript its a bit awkward working with Javascript testing scripts.
 
 The selenium test script will parse the default saved format (html) of the Selenium IDE in firefox using Selenium-Html-js-converter and execute them. Btw you need selenium-standalone installed
+
 [link](https://www.npmjs.com/package/selenium-html-js-converter)  
 [link](https://www.npmjs.com/package/selenium-standalone)
 
 Install Selenium IDE for easier test generation [link](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
 
-Sample script to run the demo
+Files to look at :
+
+```
+  'test/selenium.js'
+  'test/Journey/selenium/test-runner.js'
+```
+
+Script to run the demo
 
 ```
   npm run test:selenium
