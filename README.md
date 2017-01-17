@@ -21,8 +21,10 @@ For this Project we use port 3999 and the journey test scripts assume that port
 ```
   NODE_ENV='local'
   PORT='3999'
-  SELENIUM_SERVER_REMOTE='SOME_IP'
+  SELENIUM_REMOTE_HUB='http://127.0.0.1:4444/wd/hub' <-- the actual selenium hub
+  SELENIUM_BROWSER='chrome'
   SLACK_DEVELOPMENT_HOOK_URL='<OPTIONAL_URL>' <-- from mocha-factory
+  SELENIUM_SERVER_REMOTE='SOME_IP'
 ```
 
 ##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
@@ -61,6 +63,8 @@ Note: You must install the correct webdrivers please refer here [link](https://g
 
 ChromeDriver: To use chrome, download this then need to unzip the package and then copy the file to /usr/local/bin.
 
+If you go remotely you also need the selenium hub which comes with the selenium-standalone binary [link](https://www.npmjs.com/package/selenium-standalone)
+
 Files to look at :
 
 ```
@@ -73,7 +77,7 @@ Script to run the demo
   npm run test:journey
 ```
 
-##### Selenium IDE Script formats
+##### Selenium IDE Script formats - Do not use for now
 
 Because the Selenium RC doesnt even accept Javascript its a bit awkward working with Javascript testing scripts.
 
@@ -107,13 +111,9 @@ This serves the actual react app
 
 ## Deployment
 
-The app confirms to heroku deployment stucture, with the root Procfile and 'postinstall' build script.
+The app conforms to heroku deployment stucture, with the root Procfile. To make it a tested pipeline simply make your app run test before it starts in Procfile.
 
 Simply mirror any environment variables in heroku and it should behave as expected.
-
-## TODO
-
-Find a way to exit the process cleanly after its finished selenium
 
 ## Other supporting docs/examples
 

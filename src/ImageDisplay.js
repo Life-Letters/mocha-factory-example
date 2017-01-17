@@ -1,3 +1,5 @@
+// A dumb component
+
 const React = require('react');
 const loadingImage = require('./loading.gif');
 

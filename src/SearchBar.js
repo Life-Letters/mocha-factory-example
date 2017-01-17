@@ -1,5 +1,6 @@
-const React = require('react');
+// A dumb component
 
+const React = require('react');
 const styles = {width: '90%', maxWidth: '300px'};
 
 module.exports =

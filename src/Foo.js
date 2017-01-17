@@ -1,3 +1,5 @@
+// A Full fledged react container
+
 import React, { PropTypes , Component} from 'react';
 import styles from './styles.scss';
 import { getGif } from './getGif';

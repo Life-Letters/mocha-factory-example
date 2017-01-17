@@ -1,3 +1,4 @@
+// We recommend to not use this at all for now
 require('dotenv').config();
 
 const path = require('path'),

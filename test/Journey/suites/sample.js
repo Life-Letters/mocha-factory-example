@@ -5,16 +5,23 @@ import webdriver from 'selenium-webdriver';
 var By = webdriver.By,
     until = webdriver.until;
 
+// Use environcment vars to change browser and remote
+// Undefined SELENIUM_SERVER_REMOTE will default to your local PC
+// Undefined Browser will probably crash
+
 var googleWindow = new webdriver.Builder()
-    .forBrowser('phantomjs')
+    .forBrowser(process.env.SELENIUM_BROWSER)
+    .usingServer(process.env.SELENIUM_SERVER_REMOTE)
     .build();
 
+// Just to demonstrate multi drivers
 var appleWindow = new webdriver.Builder()
-    .forBrowser('phantomjs')
+    .forBrowser(process.env.SELENIUM_BROWSER)
+    .usingServer(process.env.SELENIUM_SERVER_REMOTE)
     .build();
 
 // Write the tests
-describe("Testing Component", function() {
+describe("Testing Google and Apple", function() {
 
   // UI tests are slow especially with this internet
   this.timeout(10000);
