@@ -46,6 +46,7 @@
     "mocha": "^2.4.5",
     "mocha-ci-slack-reporter": "^1.0.1",
     "mocha-factory": "https://github.com/Life-Letters/mocha-factory.git",
+    "node-fetch": "^1.6.3",
     "node-sass": "^3.10.0",
     "nodemon": "^1.11.0",
     "phantomjs-prebuilt": "^2.1.14",

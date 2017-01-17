@@ -21,10 +21,14 @@ For this Project we use port 3999 and the journey test scripts assume that port
 ```
   NODE_ENV='local'
   PORT='3999'
-  SELENIUM_REMOTE_HUB='http://127.0.0.1:4444/wd/hub' <-- the actual selenium hub
+  SELENIUM_REMOTE_HUB='http://xxx.xx.xx.xx:4444/wd/hub' <-- the actual selenium hub
   SELENIUM_BROWSER='chrome'
   SLACK_DEVELOPMENT_HOOK_URL='<OPTIONAL_URL>' <-- from mocha-factory
   SELENIUM_SERVER_REMOTE='SOME_IP'
+
+  // These 2 are to demonstrate real requests and integration testing
+  TEST_USER='test@test.com'
+  TEST_PASS='test'
 ```
 
 ##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
