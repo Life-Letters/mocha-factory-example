@@ -36,6 +36,7 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.4.3",
     "body-parser": "^1.15.2",
+    "colors": "^1.1.2",
     "css-loader": "0.25.0",
     "css-modules-require-hook": "^4.0.5",
     "dotenv": "^4.0.0",
@@ -46,6 +47,7 @@
     "json-loader": "0.5.4",
     "mocha": "^2.4.5",
     "mocha-ci-slack-reporter": "^1.0.1",
+    "mocha-factory": "https://github.com/Life-Letters/mocha-factory.git",
     "node-sass": "^3.10.0",
     "nodemon": "^1.11.0",
     "phantomjs-prebuilt": "^2.1.14",
@@ -60,8 +62,7 @@
     "url-loader": "0.5.7",
     "wd-sync": "^1.2.5",
     "webpack": "^1.13.1",
-    "webpack-dev-server": "^1.16.2",
-    "mocha-factory": "https://github.com/Life-Letters/mocha-factory.git"
+    "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "axios": "^0.15.3",

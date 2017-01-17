@@ -1,6 +1,7 @@
 require('dotenv').config();
 
 const wdSync = require('wd-sync'),
+      colors = require('colors/safe'),
       client = wdSync.remote(process.env.SELENIUM_SERVER_REMOTE),
       fs = require('fs'),
       path = require('path'),
@@ -24,8 +25,9 @@ describe('Selenium tests - made by IDE', function() {
       browser.init( { browserName: 'phantomjs'} );
         for(var testfile of testList){
           const test = require(testfile);
+          console.log(`Test Begin : ${test.name}`);
           test(browser);
-          console.log(`Test succeeded : ${test.name}`)
+          console.log(colors.green(`Test Pass✓ : ${test.name}`));
         }
       browser.quit();
       done();
