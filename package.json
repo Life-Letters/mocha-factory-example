@@ -36,13 +36,11 @@
     "babel-preset-stage-0": "^6.16.0",
     "babel-register": "^6.4.3",
     "body-parser": "^1.15.2",
-    "colors": "^1.1.2",
     "css-loader": "0.25.0",
     "css-modules-require-hook": "^4.0.5",
     "dotenv": "^4.0.0",
     "enzyme": "^2.0.0",
     "file-loader": "0.9.0",
-    "growl": "^1.9.2",
     "jsdom": "^8.0.1",
     "json-loader": "0.5.4",
     "mocha": "^2.4.5",
@@ -56,19 +54,17 @@
     "require-hacker": "^2.1.4",
     "resolve-url-loader": "1.6.0",
     "sass-loader": "4.0.2",
-    "selenium-html-js-converter": "^0.4.7",
     "sinon": "^1.17.7",
     "style-loader": "0.13.1",
     "url-loader": "0.5.7",
-    "wd-sync": "^1.2.5",
     "webpack": "^1.13.1",
     "webpack-dev-server": "^1.16.2"
   },
   "dependencies": {
     "axios": "^0.15.3",
+    "chai": "^3.5.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
-    "selenium-webdriver": "^3.0.1",
-    "chai": "^3.5.0"
+    "selenium-webdriver": "^3.0.1"
   }
 }
