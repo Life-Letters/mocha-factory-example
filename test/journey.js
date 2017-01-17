@@ -1,6 +1,6 @@
 // Babel our imports
 require('babel-register')();
-require('dotenv');
+require('dotenv').config();
 
 // Serve our app
 var server = require('../server.js');

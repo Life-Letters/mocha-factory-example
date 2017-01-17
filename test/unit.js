@@ -1,6 +1,6 @@
 // Babel our imports
 require('babel-register')();
-require('dotenv');
+require('dotenv').config();
 
 var MochaFactory = require('mocha-factory');
 

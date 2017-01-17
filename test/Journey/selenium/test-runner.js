@@ -1,10 +1,7 @@
-require('dotenv');
-
-// Selenium server remote IP Is set in environment
-const SELENIUM_SERVER_REMOTE = process.env.SELENIUM_SERVER_REMOTE || '';
+require('dotenv').config();
 
 const wdSync = require('wd-sync'),
-      client = wdSync.remote('172.20.10.8'),
+      client = wdSync.remote(process.env.SELENIUM_SERVER_REMOTE),
       fs = require('fs'),
       path = require('path'),
       browser = client.browser,
