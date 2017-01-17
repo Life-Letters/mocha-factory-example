@@ -21552,8 +21552,6 @@
 
 	var _getGif = __webpack_require__(183);
 
-	var _getGif2 = _interopRequireDefault(_getGif);
-
 	var _SearchBar = __webpack_require__(209);
 
 	var _SearchBar2 = _interopRequireDefault(_SearchBar);
@@ -21598,7 +21596,7 @@
 	        var _this2 = this;
 
 	        this.setState({ loading: true });
-	        (0, _getGif2['default'])(term).then(function (gif) {
+	        (0, _getGif.getGif)(term).then(function (gif) {
 	          _this2.setState({ loading: false, gif: gif, term: term });
 	        });
 	      }

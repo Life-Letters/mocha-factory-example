@@ -8,11 +8,12 @@
     "start": "npm run build && node server",
     "test:unit": "node test/unit.js",
     "test:journey": "node ./test/journey.js",
-    "test:selenium": "selenium-standalone start | npm run start && node ./test/selenium.js",
+    "test:selenium": "node ./test/selenium.js",
     "test:all": "node test/unit.js && node test/journey.js",
     "watch:test:unit": "nodemon -x 'npm run test:unit'",
     "watch:serve": "webpack-dev-server --watch",
-    "git:push": "npm run test:all && git push"
+    "git:push": "npm run test:all && git push",
+    "selenium-server": "selenium-standalone start | npm start"
   },
   "engineStrict": true,
   "engines": {
