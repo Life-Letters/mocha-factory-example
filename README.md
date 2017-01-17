@@ -19,11 +19,13 @@ Some environment variables are expected. Optional is marked with <OPTIONAL_...> 
 For this Project we use port 3999 and the journey test scripts assume that port
 
 ```
-  NODE_ENV="local"
-  PORT="3999"
-  SELENIUM_SERVER_REMOTE="SOME_IP"
-  SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>" <-- from mocha-factory
+  NODE_ENV='local'
+  PORT='3999'
+  SELENIUM_SERVER_REMOTE='SOME_IP'
+  SLACK_DEVELOPMENT_HOOK_URL='<OPTIONAL_URL>' <-- from mocha-factory
 ```
+
+##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
 
 Look at these files to see how to set them up in your own Project
 

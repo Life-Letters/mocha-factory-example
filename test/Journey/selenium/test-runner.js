@@ -4,7 +4,7 @@ require('dotenv');
 const SELENIUM_SERVER_REMOTE = process.env.SELENIUM_SERVER_REMOTE || '';
 
 const wdSync = require('wd-sync'),
-      client = wdSync.remote(),
+      client = wdSync.remote('172.20.10.8'),
       fs = require('fs'),
       path = require('path'),
       browser = client.browser,
