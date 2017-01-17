@@ -21,6 +21,7 @@ For this Project we use port 3999 and the journey test scripts assume that port
 ```
   NODE_ENV="local"
   PORT="3999"
+  SELENIUM_SERVER_REMOTE="SOME_IP"
   SLACK_DEVELOPMENT_HOOK_URL="<OPTIONAL_URL>" <-- from mocha-factory
 ```
 
