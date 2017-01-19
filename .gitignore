@@ -13,5 +13,5 @@ test/Journey/Export
 # .env
 .env
 
-# Public
-public
+# Build
+public/build
