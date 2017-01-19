@@ -119,13 +119,12 @@ The app conforms to heroku deployment stucture, with the root Procfile. To make 
 
 Simply mirror any environment variables in heroku and it should behave as expected. This project fits nicely into heroku pipelines.
 
+This app uses the heroku/nodejs official buildpack.
+
 
 ##### Testing
 
-Uses the Heroku testpack structure. basically similar to Procfile you have scripts in /bin/ to run tests. Check out these docs and sample. 
-
-[Testpack doc](https://devcenter.heroku.com/articles/testpack-api)
-[Sample repo](https://github.com/ddollar/buildpack-test)
+The heroku nodejs official buildpack runs tests if you supply a test script.
 
 ## Other supporting docs/examples
 
