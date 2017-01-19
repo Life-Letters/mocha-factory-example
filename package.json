@@ -4,7 +4,7 @@
   "description": "Example Project to use Mocha-factory and write unit/journey/selenium tests",
   "scripts": {
     "build": "webpack",
-    "test": "npm run test:all",
+    "test": "echo 'TEST RUNNING'",
     "start": "npm run build && node server",
     "test:unit": "node test/unit.js",
     "test:journey": "node ./test/journey.js",
