@@ -29,6 +29,10 @@ For this Project we use port 3999 and the journey test scripts assume that port
   // These 2 are to demonstrate real requests and integration testing
   TEST_USER='test@test.com'
   TEST_PASS='test'
+
+  // Heroku specific
+  NPM_CONFIG_PRODUCTION = false <--- installs dev dependencies to allow testing
+  NODE_MODULES_CACHE = true/false <--- If you want to bust the cache
 ```
 
 ##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
