@@ -29,6 +29,11 @@ For this Project we use port 3999 and the journey test scripts assume that port
   // These 2 are to demonstrate real requests and integration testing
   TEST_USER='test@test.com'
   TEST_PASS='test'
+
+  // Heroku specific
+  // Enable Testing
+  NPM_CONFIG_NPAT=true
+
 ```
 
 ##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
@@ -119,12 +124,7 @@ The app conforms to heroku deployment stucture, with the root Procfile. To make 
 
 Simply mirror any environment variables in heroku and it should behave as expected. This project fits nicely into heroku pipelines.
 
-This app uses the heroku/nodejs official buildpack.
-
-
-##### Testing
-
-The heroku nodejs official buildpack runs tests if you supply a test script.
+This app uses the heroku/nodejs official buildpack. Remember to have **NPM_CONFIG_NPAT=true** in your env else it wont run tests.
 
 ## Other supporting docs/examples
 
