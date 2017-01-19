@@ -63,11 +63,11 @@ npm run test:unit
 ## Journey Testing
 
 Testing UI from a browser perspective using Selenium/Chrome/PhantomJs/Selenum-webdriver  
-Note: You must install the correct webdrivers please refer here [link](https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver)
+Note: You must install the correct webdrivers please refer here [selenium-webdriver](https://github.com/SeleniumHQ/selenium/tree/master/javascript/node/selenium-webdriver)
 
 ChromeDriver: To use chrome, download this then need to unzip the package and then copy the file to /usr/local/bin.
 
-If you go remotely you also need the selenium hub which comes with the selenium-standalone binary [link](https://www.npmjs.com/package/selenium-standalone)
+If you go remotely you also need the selenium hub which comes with the selenium-standalone binary [selenium-standalone](https://www.npmjs.com/package/selenium-standalone)
 
 Files to look at :
 
@@ -87,10 +87,10 @@ Because the Selenium RC doesnt even accept Javascript its a bit awkward working 
 
 The selenium test script will parse the default saved format (html) of the Selenium IDE in firefox using Selenium-Html-js-converter and execute them. Btw you need selenium-standalone installed
 
-[link](https://www.npmjs.com/package/selenium-html-js-converter)  
-[link](https://www.npmjs.com/package/selenium-standalone)
+[selenium-html-js-converter](https://www.npmjs.com/package/selenium-html-js-converter)  
+[selenium-standalone](https://www.npmjs.com/package/selenium-standalone)
 
-Install Selenium IDE for easier test generation [link](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
+Install Selenium IDE for easier test generation [selenium-ide](https://addons.mozilla.org/en-US/firefox/addon/selenium-ide/)
 
 Files to look at :
 
