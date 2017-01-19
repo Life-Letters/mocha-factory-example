@@ -14,7 +14,7 @@
     "watch:serve": "webpack-dev-server --watch",
     "git:push": "npm run test:all && git push",
     "selenium-server": "selenium-standalone start | npm start",
-    "postinstall": "if [ \"$NODE_ENV\" == \"production\" ]\n then\n npm run test\n else\n echo \"not production\"\n fi"
+    "postinstall": "npm run test"
   },
   "engineStrict": true,
   "engines": {
