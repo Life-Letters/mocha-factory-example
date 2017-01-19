@@ -117,7 +117,7 @@ This serves the actual react app
 
 The app conforms to heroku deployment stucture, with the root Procfile. To make it a tested pipeline simply make your app run test before it starts in Procfile.
 
-Simply mirror any environment variables in heroku and it should behave as expected.
+Simply mirror any environment variables in heroku and it should behave as expected. This project fits nicely into heroku pipelines.
 
 ## Other supporting docs/examples
 
