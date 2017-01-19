@@ -10,5 +10,8 @@ node_modules
 screenshots
 test/Journey/Export
 
-#.env
+# .env
 .env
+
+# Build
+public/build

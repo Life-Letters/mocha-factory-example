@@ -29,6 +29,10 @@ For this Project we use port 3999 and the journey test scripts assume that port
   // These 2 are to demonstrate real requests and integration testing
   TEST_USER='test@test.com'
   TEST_PASS='test'
+
+  // Heroku specific
+  NPM_CONFIG_PRODUCTION = false <--- installs dev dependencies to allow testing
+  NODE_MODULES_CACHE = true/false <--- If you want to bust the cache
 ```
 
 ##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
@@ -115,9 +119,17 @@ This serves the actual react app
 
 ## Deployment
 
-The app conforms to heroku deployment stucture, with the root Procfile. To make it a tested pipeline simply make your app run test before it starts in Procfile.
+This doc assumes you are on heroku with official nodejs buildpack.
+
+Procfile to run custom web/workers etc. Default command is npm start.
 
 Simply mirror any environment variables in heroku and it should behave as expected. This project fits nicely into heroku pipelines.
+
+This app uses the heroku/nodejs official buildpack. Which allegedly should run npm test. but it doesn't. For now just put a postinstall script:
+
+```
+postinstall : "npm run test"
+```
 
 ## Other supporting docs/examples
 

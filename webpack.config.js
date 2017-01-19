@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var path = require('path');
 var loaders = require('./webpack.loaders.js');
 
-var BUILD_DIR = path.resolve(__dirname, 'public');
+var BUILD_DIR = path.resolve(__dirname, 'public/build');
 var APP_DIR = path.resolve(__dirname, 'src');
 
 var config = {
