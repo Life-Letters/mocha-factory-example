@@ -1,5 +1,5 @@
 {
-  "name": "enzyme-exmaple-mocha",
+  "name": "mocha-factory-example",
   "version": "1.0.0",
   "description": "Example Project to use Mocha-factory and write unit/journey/selenium tests",
   "scripts": {
@@ -17,18 +17,18 @@
   },
   "engineStrict": true,
   "engines": {
-    "node": ">=7.3.0"
+    "node": "6.9.4"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/lelandrichardson/enzyme-example-mocha.git"
+    "url": "https://github.com/Life-Letters/mocha-factory-example.git"
   },
-  "author": "Leland Richardson <leland.richardson@airbnb.com>",
+  "author": "Patrick Lai <Patrick.lai@lifeletters.com.au>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/lelandrichardson/enzyme-example-mocha/issues"
+    "url": "https://github.com/Life-Letters/mocha-factory-example/issues"
   },
-  "homepage": "https://github.com/lelandrichardson/enzyme-example-mocha",
+  "homepage": "https://github.com/Life-Letters/mocha-factory-example",
   "devDependencies": {
     "babel-core": "^6.21.0",
     "babel-loader": "^6.2.10",
