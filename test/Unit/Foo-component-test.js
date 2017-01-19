@@ -95,7 +95,7 @@ describe("Testing Component", function() {
 
   });
 
-  xit("Ignored test", function(){
+  it("Ignored test", function(){
     // This is ignored - Used to test CI When fail
     expect(false).to.equal(true);
   })
