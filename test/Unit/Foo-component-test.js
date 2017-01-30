@@ -3,9 +3,6 @@ import { expect, assert } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 import sinon from 'sinon';
 
-// This is how you mock a store
-import configureStore from 'redux-mock-store'
-
 // Componentry
 import Foo from '../../src/components/Foo';
 import SearchBar from '../../src/components/SearchBar';
@@ -13,14 +10,19 @@ import SearchBar from '../../src/components/SearchBar';
 // Styles
 import styles from '../../src/components/styles.scss';
 
+// This is how you create a shallow with a store - just make it from the src
+import store from '../../src/store';
+
+// This is how you can create a mocked store:
+import configureStore from 'redux-mock-store';
+const mockStore = configureStore();
+
 // Setup
 // Convenience method, especially useful when your component has alot of parameters
-const makeShallow = () => shallow(<Foo />);
-const makeMounted = () => mount(<Foo />);
+// Please take note of this '.dive()' function which is applicable when you wrap it with a store
+const makeShallow = () => shallow(<Foo />, { context: { store } }).dive();
+const makeMounted = () => mount(<Foo />, { context: { store } });
 
-// Mock Actions - You can just refer it to your src
-
-// Test suite
 // Don't use es6 Arrow functions because it has some scoping confusion (with 'this')
 describe("Testing Component", function() {
 
@@ -30,6 +32,32 @@ describe("Testing Component", function() {
 
   it("Contains only a single element with class 'foo' - counting elements", function() {
     expect(makeShallow().find(`.${styles.foo}`).length).to.equal(1);
+  });
+
+  it("Simple Mocking state", function(){
+    const mockedTitle = 'Whatsup doc';
+    const mockedState = {
+      app : {
+        title: mockedTitle
+      }
+    };
+
+    const store = mockStore(mockedState);
+    const wrapper = shallow(<Foo />, { context: { store } }).dive();
+
+    // Check title is
+    expect(wrapper.find(`.${styles.dentext}`).text()).to.equal(mockedTitle);
+  });
+
+  // If your going to interact with anything you may as well mount
+  it("Pressing the button makes title change", function(){
+    const wrapper = makeMounted();
+    // Check title is
+    expect(wrapper.find(`.${styles.dentext}`).text()).to.equal('The den is dark');
+    // Click the button
+    wrapper.find(`.${styles.myButton}`).simulate('click');
+    // console.log(wrapper.debug());
+    expect(wrapper.find(`.${styles.dentext}`).text()).to.equal('DRAGON HAS ENTERED');
   });
 
   it('Passes loading:true to ImageDisplay - prop checking',  function() {
@@ -60,7 +88,7 @@ describe("Testing Component", function() {
     // We make a promise here so we can catch it later down the test
     var getGifPromise;
 
-    sinon.stub(Foo.prototype, '_handleSearch', function(){
+    sinon.stub(Foo.WrappedComponent.prototype, '_handleSearch', function(){
       this.setState({loading: true});
 
       // Mocked Sample response as if API was called
