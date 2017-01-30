@@ -3,17 +3,22 @@ import { expect, assert } from 'chai';
 import { shallow, mount, render } from 'enzyme';
 import sinon from 'sinon';
 
+// This is how you mock a store
+import configureStore from 'redux-mock-store'
+
 // Componentry
-import Foo from '../../src/Foo';
-import SearchBar from '../../src/SearchBar';
+import Foo from '../../src/components/Foo';
+import SearchBar from '../../src/components/SearchBar';
 
 // Styles
-import styles from '../../src/styles.scss';
+import styles from '../../src/components/styles.scss';
 
 // Setup
 // Convenience method, especially useful when your component has alot of parameters
 const makeShallow = () => shallow(<Foo />);
-const makeMounted = () => mount(<Foo />)
+const makeMounted = () => mount(<Foo />);
+
+// Mock Actions - You can just refer it to your src
 
 // Test suite
 // Don't use es6 Arrow functions because it has some scoping confusion (with 'this')

@@ -52,6 +52,9 @@ Please note you must import the scss files in your tests.
 
 [Enzyme api docs](http://airbnb.io/enzyme/docs/api/index.html)
 
+We also use react-mock-store which apparently helps u test witha mock store:  
+[react-mock-store](http://arnaudbenard.com/redux-mock-store/)
+
 Files to look at :
 
 ```

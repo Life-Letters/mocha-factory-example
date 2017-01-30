@@ -1,4 +1,4 @@
-import * as F from '../../src/Functions';
+import * as F from '../../src/utils/Functions';
 import { expect } from 'chai';
 
 describe("Testing Functions", function() {

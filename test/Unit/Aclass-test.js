@@ -1,4 +1,4 @@
-import Aclass from '../../src/Aclass';
+import Aclass from '../../src/classes/Aclass';
 import { expect } from 'chai';
 
 const A = new Aclass();
