@@ -11,7 +11,7 @@
     "test:selenium": "node ./test/selenium.js",
     "test:all": "node test/unit.js && node test/journey.js",
     "watch:test:unit": "nodemon -x 'npm run test:unit'",
-    "watch:serve": "webpack-dev-server --watch",
+    "watch:serve": "webpack --watch | webpack-dev-server --watch",
     "git:push": "npm run test:all && git push",
     "selenium-server": "selenium-standalone start | npm start",
     "postinstall": "npm run test"
@@ -68,6 +68,7 @@
     "chai": "^3.5.0",
     "react": "^15.4.0",
     "react-dom": "^15.4.0",
+    "react-redux": "^5.0.2",
     "redux": "^3.6.0",
     "redux-mock-store": "^1.2.1",
     "selenium-webdriver": "^3.0.1"

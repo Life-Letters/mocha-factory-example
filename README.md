@@ -147,3 +147,7 @@ https://github.com/lalitkapoor/node-pg-util/blob/master/src/test.js
 
 - Chai Promises 'eventually'  
 http://chaijs.com/plugins/chai-as-promised/
+
+## TODO  
+
+Fix: Oddly webpack-dev-server --watch doesnt seem to hot reload.

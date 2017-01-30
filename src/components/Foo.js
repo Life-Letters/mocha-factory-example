@@ -5,6 +5,8 @@ import styles from './styles.scss';
 import { getGif } from '../utils/getGif';
 import SearchBar from './SearchBar';
 import ImageDisplay from './ImageDisplay';
+import { enterTheDragon } from '../actions';
+import { connect } from 'react-redux';
 
 const propTypes = {};
 
@@ -14,7 +16,6 @@ class Foo extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title: "The den is dark",
       loading: true,
       term: '',
       gif: {}
@@ -29,16 +30,16 @@ class Foo extends Component {
   }
 
   enterTheDragon(){
-    this.setState({
-      title: "DRAGON HAS ENTERED"
-    })
+    // Dispatch
+    this.props.enterTheDragon('DRAGON HAS ENTERED');
   }
 
   render() {
+
     return (
       <div className={styles.foo}>
         <h1>Example app using mocha-factory</h1>
-        <h2 className={styles.dentext}>{this.state.title}</h2>
+        <h2 className={styles.dentext}>{this.props.title}</h2>
         <button className={styles.myButton} onClick={this.enterTheDragon.bind(this)}>Enter the Dragon</button>
         <hr/>
         <h1>gif grabbr!</h1>
@@ -60,4 +61,12 @@ class Foo extends Component {
 Foo.propTypes = propTypes;
 Foo.defaultProps = defaultProps;
 
-export default Foo;
+const mapStateToProps = (state) => ({
+  title: state.app.title
+});
+
+const mapDispatchToProps = ({
+  enterTheDragon: enterTheDragon
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(Foo);

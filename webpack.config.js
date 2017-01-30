@@ -16,11 +16,15 @@ var config = {
       inline: true,
       stats: {
         chunks: false
-      }
+      },
+      hot: true
     },
     module : {
         loaders : loaders
-    }
+    },
+    plugins: [
+      new webpack.HotModuleReplacementPlugin()
+    ]
 };
 
 module.exports = config;

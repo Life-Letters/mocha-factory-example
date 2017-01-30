@@ -3,7 +3,6 @@ const axios = require('axios');
 const GIPHY_API_URL = `https://api.giphy.com`;
 const GIPHY_PUB_KEY = `dc6zaTOxFJmzC`;
 
-
 // Its Important to write your functions like this so you can easily stub it.
 
 export const getGif = (tagName) => {
