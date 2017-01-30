@@ -34,7 +34,7 @@ describe("Testing Component", function() {
     expect(makeShallow().find(`.${styles.foo}`).length).to.equal(1);
   });
 
-  it("Simple Mocking state", function(){
+  it("Simple Mocking store", function(){
     const mockedTitle = 'Whatsup doc';
     const mockedState = {
       app : {
@@ -49,7 +49,8 @@ describe("Testing Component", function() {
     expect(wrapper.find(`.${styles.dentext}`).text()).to.equal(mockedTitle);
   });
 
-  // If your going to interact with anything you may as well mount
+  // If your going to interact with dispatches and actions you may as well mount
+  // You can mock dispatches and actions with redux-mock-store too but it gets overly complicated
   it("Pressing the button makes title change", function(){
     const wrapper = makeMounted();
     // Check title is
