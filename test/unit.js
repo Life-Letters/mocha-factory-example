@@ -12,7 +12,7 @@ MochaFactory.setup({
 });
 
 // Add your test files
-MochaFactory.addFiles('./test/Unit','.js');
+MochaFactory.addFiles('./test/Unit','.spec.js');
 
 // Run the mocha test
 MochaFactory.run();

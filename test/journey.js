@@ -14,7 +14,7 @@ MochaFactory.setup({
 });
 
 // Add each .js file to the mocha instance
-MochaFactory.addFiles('./test/Journey/suites','.js');
+MochaFactory.addFiles('./test/Journey/suites','.spec.js');
 
 // Run the mocha test
 MochaFactory.run();
