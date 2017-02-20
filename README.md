@@ -7,32 +7,32 @@ As an overview theres 3 types of tests, They can be ran with the following comma
 Note : Selenium tests are not considered part of the usual suite for now. Suggest you write your journeys as webdriver/journey tests if they are critical.
 
 ```
-  npm run test:unit
-  npm run test:journey
-  npm run test:selenium
+npm run test:unit
+npm run test:journey
+npm run test:selenium
 
-  // With watch
-  npm run watch:test:unit
+// With watch
+npm run watch:test:unit
 ```
 
 Some environment variables are expected. Optional is marked with <OPTIONAL_...> else its required. For development make a '.env' file in root:  
 For this Project we use port 3999 and the journey test scripts assume that port
 
 ```
-  NODE_ENV='local'
-  PORT='3999'
-  SELENIUM_REMOTE_HUB='http://xxx.xx.xx.xx:4444/wd/hub' <-- the actual selenium hub
-  SELENIUM_BROWSER='chrome'
-  SLACK_DEVELOPMENT_HOOK_URL='<OPTIONAL_URL>' <-- from mocha-factory
-  SELENIUM_SERVER_REMOTE='SOME_IP'
+NODE_ENV='local'
+PORT='3999'
+SELENIUM_REMOTE_HUB='http://xxx.xx.xx.xx:4444/wd/hub' <-- the actual selenium hub
+SELENIUM_BROWSER='chrome'
+SLACK_DEVELOPMENT_HOOK_URL='<OPTIONAL_URL>' <-- from mocha-factory
+SELENIUM_SERVER_REMOTE='SOME_IP'
 
-  // These 2 are to demonstrate real requests and integration testing
-  TEST_USER='test@test.com'
-  TEST_PASS='test'
+// These 2 are to demonstrate real requests and integration testing
+TEST_USER='test@test.com'
+TEST_PASS='test'
 
-  // Heroku specific
-  NPM_CONFIG_PRODUCTION = false <--- installs dev dependencies to allow testing
-  NODE_MODULES_CACHE = true/false <--- If you want to bust the cache
+// Heroku specific
+NPM_CONFIG_PRODUCTION = false <--- installs dev dependencies to allow testing
+NODE_MODULES_CACHE = true/false <--- If you want to bust the cache
 ```
 
 ##### NOTE - please use Char in ur .env single quote else wd-sync.remote breaks
@@ -40,9 +40,9 @@ For this Project we use port 3999 and the journey test scripts assume that port
 Look at these files to see how to set them up in your own Project
 
 ```
-  test/unit.js
-  test/journey.js
-  test/selenium.js
+test/unit.js
+test/journey.js
+test/selenium.js
 ```
 
 ## Unit, Classes, React Components
@@ -55,7 +55,7 @@ Please note you must import the scss files in your tests.
 Files to look at :
 
 ```
-  'test/unit.js'
+'test/unit.js'
 ```
 
 Script to run the demo
@@ -76,13 +76,13 @@ If you go remotely you also need the selenium hub which comes with the selenium-
 Files to look at :
 
 ```
-  'test/journey.js'
+'test/journey.js'
 ```
 
 Script to run the demo
 
 ```
-  npm run test:journey
+npm run test:journey
 ```
 
 ##### Selenium IDE Script formats - Do not use for now
@@ -99,22 +99,22 @@ Install Selenium IDE for easier test generation [selenium-ide](https://addons.mo
 Files to look at :
 
 ```
-  'test/selenium.js'
-  'test/Journey/selenium/test-runner.js'
+'test/selenium.js'
+'test/Journey/selenium/test-runner.js'
 ```
 
 Script to run the demo
 
 ```
-  npm run test:selenium
+npm run test:selenium
 ```
 ## Serving the test app
 
 This serves the actual react app
 
 ```
-  npm run build
-  npm run serve (builds AND serve/watch)
+npm run build
+npm run serve (builds AND serve/watch)
 ```
 
 ## Deployment
