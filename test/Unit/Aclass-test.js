@@ -29,13 +29,15 @@ describe("Testing class A", function() {
   it("Can login to dev, use auth to find Dermatoscope in our device database", function(done){
 
     A.login(process.env.TEST_USER,process.env.TEST_PASS)
-     .then(()=>{
-       return A.fetchDevices()
+     .then((result) => {
+       return A.checkConsultHealth();
      })
-     .then(devices=>{
-       const deviceNamesOnly = devices.devices.map(d => d.name);
+     .then(aliveStatus => {
+       // TODO - consult-dev has been deprecated
        // We expect there to be a Dermatoscope
-       expect(deviceNamesOnly.find(r=>r === 'Dermatoscope')).to.not.equal(undefined);
+       // const deviceNamesOnly = devices.devices.map(d => d.name);
+       // expect(deviceNamesOnly.find(r => r === 'Dermatoscope')).to.not.equal(undefined);
+       expect(aliveStatus.alive).to.equal(true);
        done();
      });
 

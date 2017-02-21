@@ -11,7 +11,8 @@ const services = {
 
 const endpoints = {
   login : '/login',
-  devices: '/devices'
+  devices: '/devices',
+  health: '/health'
 }
 
 export default class Aclass {
@@ -25,7 +26,8 @@ export default class Aclass {
         Authorization : undefined
       },
       files: undefined,
-      devices: undefined
+      devices: undefined,
+      alive: false
     };
 
     this.add = a => b => {
@@ -62,16 +64,26 @@ export default class Aclass {
 
     }
 
-    this.fetchDevices = () =>{
+    // TODO: THIS HAS BEEN DEPRECATED AS PART OF v1 LEGACY
+    this.fetchDevices = () => {
       return fetch(services.consult_service+endpoints.devices, {
         method: 'GET',
         headers: this.state.headers
       })
       .then(this.toJson)
-      .then(json=>{
+      .then((json) => {
         this.state.devices = json.devices;
         return json;
       });
+    }
+
+    this.checkConsultHealth = () => {
+      return fetch(services.consult_service+endpoints.health)
+      .then(this.toJson)
+      .then((json) => {
+        this.state.alive = json.alive;
+        return json;
+      })
     }
 
   }

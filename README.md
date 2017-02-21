@@ -22,7 +22,7 @@ For this Project we use port 3999 and the journey test scripts assume that port
 NODE_ENV='local'
 PORT='3999'
 SELENIUM_REMOTE_HUB='http://xxx.xx.xx.xx:4444/wd/hub' <-- the actual selenium hub
-SELENIUM_BROWSER='chrome'
+SELENIUM_BROWSER='phantomjs'
 SLACK_DEVELOPMENT_HOOK_URL='<OPTIONAL_URL>' <-- from mocha-factory
 SELENIUM_SERVER_REMOTE='SOME_IP'
 
