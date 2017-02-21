@@ -26,7 +26,7 @@ describe("Testing class A", function() {
     expect(result).to.equal(4);
   });
 
-  it("Can login to dev, use auth to find Dermatoscope in our device database", function(done){
+  it("Can login to dev, can ping consult health check", function(done){
 
     A.login(process.env.TEST_USER,process.env.TEST_PASS)
      .then((result) => {
